@@ -13,21 +13,21 @@ export default {
       },
       colors: {
         navy: {
-          950: '#020C1B', // Darkest Navy (Pivot Start)
-          900: '#0a192f',
-          800: '#112240',
+          950: '#030812', // Deep Charcoal Navy
+          900: '#0B1729', // Oxford Blue
+          800: '#17253D', // Lighter Oxford
         },
         slate: {
-          50: '#F8FAF9',
-          100: '#E8ECEB', // Institutional grey
+          50: '#F9FAFB',
+          100: '#F0F2F4', // Crisp institutional grey
         },
         amber: {
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
+          400: '#F0C05A', // Muted Gold (Readable on dark)
+          500: '#D9A136', // Academy Gold
+          600: '#B08022', // Bronze
         },
         sage: {
-          500: '#84A59D', // Safety/Calm
+          500: '#7B9C96', // Muted Teal/Sage
         }
       },
     },

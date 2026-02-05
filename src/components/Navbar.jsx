@@ -36,9 +36,9 @@ const Navbar = () => {
 
                <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('#hero')}>
                   <div className={`w-10 h-10 flex items-center justify-center font-serif font-bold text-xl rounded-sm transition-all duration-300 ${scrolled ? "bg-navy-900 text-white" : "bg-white text-navy-900"}`}>I</div>
-                  <div className="font-serif text-lg tracking-wider font-light flex flex-col leading-none">
+                  <div className="font-serif text-lg tracking-wider font-normal flex flex-col leading-none">
                      <span className="font-bold">INSIDE OUT</span>
-                     <span className="text-xs uppercase tracking-[0.3em] text-amber-500">Mindset</span>
+                     <span className={`text-xs uppercase tracking-[0.3em] font-bold ${scrolled ? "text-amber-600" : "text-amber-400"}`}>Mindset</span>
                   </div>
                </div>
 
