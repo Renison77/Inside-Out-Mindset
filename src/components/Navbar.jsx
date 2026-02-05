@@ -31,14 +31,14 @@ const Navbar = () => {
 
    return (
       <>
-         <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/90 backdrop-blur-md py-4 shadow-sm border-b border-slate-100" : "bg-transparent py-8"}`}>
-            <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center text-navy-900">
+         <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/90 backdrop-blur-md py-4 shadow-sm border-b border-slate-100 text-navy-900" : "bg-transparent py-8 text-white"}`}>
+            <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center">
 
                <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('#hero')}>
-                  <div className={`w-10 h-10 flex items-center justify-center font-serif font-bold text-xl rounded-sm transition-all duration-300 bg-navy-900 text-white`}>I</div>
+                  <div className={`w-10 h-10 flex items-center justify-center font-serif font-bold text-xl rounded-sm transition-all duration-300 ${scrolled ? "bg-navy-900 text-white" : "bg-white text-navy-900"}`}>I</div>
                   <div className="font-serif text-lg tracking-wider font-light flex flex-col leading-none">
                      <span className="font-bold">INSIDE OUT</span>
-                     <span className="text-xs uppercase tracking-[0.3em] text-amber-600">Mindset</span>
+                     <span className="text-xs uppercase tracking-[0.3em] text-amber-500">Mindset</span>
                   </div>
                </div>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
                      <button
                         key={link.name}
                         onClick={() => scrollTo(link.href)}
-                        className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-amber-600 transition-colors relative group"
+                        className={`text-xs font-bold uppercase tracking-[0.2em] transition-colors relative group ${scrolled ? "text-slate-500 hover:text-amber-600" : "text-white/80 hover:text-amber-400"}`}
                      >
                         {link.name}
                         <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-amber-500 group-hover:w-full transition-all duration-300"></span>

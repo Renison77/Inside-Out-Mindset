@@ -1,73 +1,91 @@
-import React from 'react';
-import { Reveal, FadeIn } from './Reveal';
-import { AlertCircle } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Reveal } from './Reveal';
 
 const Problem = () => {
+   const containerRef = useRef(null);
+   const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start end", "end start"]
+   });
+
+   const lineProgress = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+
    return (
-      <section id="problem" className="py-24 md:py-32 bg-slate-50 relative border-t border-slate-100">
-         <div className="max-w-[1400px] mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <section id="problem" ref={containerRef} className="py-32 bg-navy-900 text-white relative overflow-hidden">
 
-               {/* Text Content */}
-               <div className="order-2 md:order-1">
-                  <Reveal>
-                     <h2 className="text-xs font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">The Problem</h2>
-                     <h3 className="text-4xl md:text-5xl font-serif text-navy-900 mb-8 leading-tight">
-                        Why schools and families <br /><span className="italic text-slate-400">bring this in.</span>
-                     </h3>
+         {/* Background Graph Pattern */}
+         <div className="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%">
+               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
+               </pattern>
+               <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+         </div>
 
-                     <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
-                        Many communities are watching small issues turn into bigger issues.
-                        The earlier we interrupt the pattern, the better the outcome.
-                     </p>
-                  </Reveal>
+         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-24 items-center">
 
-                  <div className="space-y-6">
-                     {[
-                        "Bullying and “status” behaviour that spreads quickly",
-                        "Students making impulsive choices under pressure",
-                        "Parents and educators feeling worried, reactive, and out of options",
-                        "A prevention message that needs to land without shame, fear, or lectures"
-                     ].map((item, i) => (
-                        <Reveal delay={i * 0.1} key={i}>
-                           <div className="flex items-start gap-4">
-                              <div className="mt-1 min-w-[20px]">
-                                 <AlertCircle size={20} className="text-amber-500" />
-                              </div>
-                              <p className="text-navy-900 font-medium leading-relaxed">{item}</p>
-                           </div>
-                        </Reveal>
-                     ))}
+               <Reveal>
+                  <h2 className="text-xs font-bold text-amber-500 uppercase tracking-[0.3em] mb-6">The Context</h2>
+                  <h3 className="text-5xl md:text-7xl font-sans font-medium text-white mb-8 leading-tight">
+                     The gap between a bad day and a bad life is <span className="text-sage-500 italic font-serif">smaller than you think.</span>
+                  </h3>
+                  <p className="text-slate-400 text-lg leading-relaxed max-w-lg font-light">
+                     Without intervention, small social issues don't just go away. They compound. We help schools identify the pivot point before it's too late.
+                  </p>
+               </Reveal>
+
+               {/* Interactive Sliding Scale */}
+               <div className="relative pt-12 pb-12">
+
+                  <div className="flex justify-between text-xs font-bold uppercase tracking-widest text-slate-500 mb-8">
+                     <span>Small Issues</span>
+                     <span className="text-amber-500">The Pivot Point</span>
+                     <span className="text-red-500">Big Issues</span>
                   </div>
 
-                  <Reveal delay={0.6}>
-                     <div className="mt-12 pt-8 border-t border-slate-200">
-                        <p className="text-xl md:text-2xl font-serif italic text-navy-800">
-                           "Kids deserve to feel safe at school, and families deserve support before things spiral."
-                        </p>
-                     </div>
-                  </Reveal>
-               </div>
+                  <div className="relative h-[2px] bg-slate-800 w-full rounded-full">
+                     <motion.div
+                        style={{ scaleX: lineProgress, transformOrigin: "left" }}
+                        className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-slate-400 via-amber-500 to-red-500"
+                     />
 
-               {/* Visual Side */}
-               <div className="order-1 md:order-2 relative">
-                  <FadeIn delay={0.2}>
-                     <div className="relative z-10">
-                        <div className="aspect-[4/5] bg-slate-200 overflow-hidden rounded-sm shadow-2xl">
-                           <img
-                              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop"
-                              alt="School hallway shadows"
-                              className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-700"
-                           />
+                     {/* Nodes */}
+                     <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-slate-600 rounded-full border-2 border-navy-900" />
+
+                     <motion.div
+                        style={{ left: "50%", scale: useTransform(lineProgress, [0.4, 0.6], [0.8, 1.5]) }}
+                        className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.5)] z-10"
+                     >
+                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-amber-500/10 text-amber-500 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-amber-500/20">
+                           Intervention Needed
                         </div>
-                        {/* Decorative Elements */}
-                        <div className="absolute -bottom-6 -left-6 w-full h-full border-2 border-amber-500/20 -z-10 hidden md:block"></div>
-                        <div className="absolute top-10 -right-10 bg-white p-6 shadow-xl max-w-[200px] hidden md:block">
-                           <span className="text-4xl font-serif text-amber-500 block mb-2">90%</span>
-                           <span className="text-xs uppercase tracking-widest text-slate-500">of intervention is timing.</span>
-                        </div>
+                     </motion.div>
+
+                     <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 rounded-full border-2 border-navy-900" />
+                  </div>
+
+                  <div className="mt-12 grid grid-cols-2 gap-8">
+                     <div className="border-l border-slate-700 pl-6">
+                        <h4 className="text-slate-300 font-serif italic text-xl mb-2">Starts Here</h4>
+                        <ul className="text-slate-500 text-sm space-y-2">
+                           <li>• Social Isolation</li>
+                           <li>• "Status" Teasing</li>
+                           <li>• Impulsive Choices</li>
+                        </ul>
                      </div>
-                  </FadeIn>
+                     <div className="border-l border-red-900/50 pl-6 text-right lg:text-left">
+                        <h4 className="text-red-400 font-serif italic text-xl mb-2">Ends Here</h4>
+                        <ul className="text-red-900/60 text-sm space-y-2">
+                           <li>• Violence / Gangs</li>
+                           <li>• School Dropouts</li>
+                           <li>• Criminal Record</li>
+                        </ul>
+                     </div>
+                  </div>
+
                </div>
 
             </div>

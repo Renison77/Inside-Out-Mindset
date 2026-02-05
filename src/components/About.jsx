@@ -1,72 +1,113 @@
-import React from 'react';
-import { Reveal } from './Reveal';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Globe } from 'lucide-react';
 
 const About = () => {
+   const containerRef = useRef(null);
+   const { scrollYProgress } = useScroll({
+      target: containerRef,
+      offset: ["start start", "end end"]
+   });
+
+   // Scene Opacities
+   const scene1Opacity = useTransform(scrollYProgress, [0, 0.3, 0.4], [1, 1, 0]);
+   const scene2Opacity = useTransform(scrollYProgress, [0.3, 0.4, 0.6, 0.7], [0, 1, 1, 0]);
+   const scene3Opacity = useTransform(scrollYProgress, [0.6, 0.7, 1], [0, 1, 1]);
+
+   // Background Colors/Images
+   const bgColor = useTransform(scrollYProgress,
+      [0, 0.3, 0.6, 1],
+      ["#020C1B", "#112240", "#F8FAF9", "#F8FAF9"] // Dark Navy -> Navy -> Off White
+   );
+
    return (
-      <section id="about" className="py-24 md:py-32 bg-amber-50 text-navy-900 relative overflow-hidden">
-         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+      <section id="about" ref={containerRef} className="relative h-[300vh]">
 
-               <div className="order-2 lg:order-1">
-                  <Reveal>
-                     <div className="inline-block px-4 py-2 bg-white text-navy-900 text-[10px] font-bold uppercase tracking-widest mb-6 border border-amber-200">
-                        The Guide
+         {/* Sticky Container */}
+         <motion.div
+            className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center p-6"
+            style={{ backgroundColor: bgColor }}
+         >
+
+            {/* SCENE 1: The Dark Past */}
+            <motion.div
+               style={{ opacity: scene1Opacity }}
+               className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+               <div className="max-w-2xl text-center px-6">
+                  <h2 className="text-4xl md:text-6xl font-serif text-slate-400 mb-8 leading-tight">
+                     "I was convicted of second-degree murder and spent <span className="text-white border-b border-red-900">12.5 years</span> incarcerated."
+                  </h2>
+               </div>
+            </motion.div>
+
+            {/* SCENE 2: The Realization */}
+            <motion.div
+               style={{ opacity: scene2Opacity }}
+               className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+               <div className="max-w-3xl text-center px-6">
+                  <h2 className="text-4xl md:text-5xl font-sans font-light text-slate-300 mb-8 leading-tight">
+                     I know what poor decisions look like.
+                     <br /><span className="text-amber-500 font-serif italic">But I also know how to interrupt them.</span>
+                  </h2>
+               </div>
+            </motion.div>
+
+            {/* SCENE 3: The Redemption (Light Mode) */}
+            <motion.div
+               style={{ opacity: scene3Opacity }}
+               className="absolute inset-0 w-full h-full flex items-center justify-center"
+            >
+               <div className="max-w-[1400px] w-full px-6 grid lg:grid-cols-12 gap-12 items-center">
+
+                  {/* Image Side */}
+                  <div className="lg:col-span-5 relative">
+                     <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+                        <img
+                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                           alt="Mindy Bhandher"
+                           className="w-full h-full object-cover grayscale contrast-125"
+                        />
                      </div>
-                     <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-none text-navy-900">
-                        Meet Mindy Bhandher
-                     </h2>
-                  </Reveal>
-
-                  <div className="space-y-6 text-slate-700 leading-relaxed font-light">
-                     <Reveal delay={0.2}>
-                        <p>
-                           My name is Mindy Bhandher. I was raised in Surrey, BC, and I’ve lived both sides of the choices that can either build a life or destroy it.
-                           <strong className="font-medium text-navy-900"> I take full responsibility for my past.</strong> I was convicted of second-degree murder and spent 12.5 years incarcerated.
-                           I know what poor decision-making looks like from the inside.
-                        </p>
-                     </Reveal>
-                     <Reveal delay={0.3}>
-                        <p>
-                           I’ve worked hard to understand what leads to that behaviour, how it escalates, and how we can interrupt it early before more lives are ruined.
-                           Through Inside Out Mindset, I deliver prevention-focused, age-appropriate talks. <br />
-                           <span className="italic text-navy-500">The goal isn’t fear, shock, or shame. The goal is understanding and change.</span>
-                        </p>
-                     </Reveal>
-                     <Reveal delay={0.4}>
-                        <p>
-                           I’m also a father of two, including a four-year-old daughter. My purpose is to help build a world where she and other kids grow up feeling safe, supported, and hopeful.
-                           I believe emotional needs being met is not “soft.” It’s protection.
-                        </p>
-                     </Reveal>
+                     {/* Cultural Badge */}
+                     <div className="absolute -bottom-8 -right-8 bg-white p-6 shadow-xl border border-slate-100 hidden md:flex items-center gap-4 max-w-xs">
+                        <div className="bg-amber-100 p-3 rounded-full text-amber-600">
+                           <Globe size={24} />
+                        </div>
+                        <div>
+                           <h4 className="font-serif text-navy-900 text-lg">Punjabi Fluent</h4>
+                           <p className="text-xs text-slate-500">Culturally relevant delivery.</p>
+                        </div>
+                     </div>
                   </div>
 
-                  <Reveal delay={0.6}>
-                     <div className="mt-10 pt-8 border-t border-amber-200 flex items-center gap-4">
-                        <div className="h-12 w-[2px] bg-amber-500"></div>
-                        <p className="font-serif italic text-xl text-navy-800">
-                           "Small choices, made early, change everything."
+                  {/* Text Side */}
+                  <div className="lg:col-span-7">
+                     <div className="inline-block px-3 py-1 border border-navy-900/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-navy-900 mb-6">
+                        The Guide
+                     </div>
+                     <h2 className="text-6xl md:text-8xl font-serif text-navy-900 mb-10 leading-[0.9]">
+                        Real Experience.<br />
+                        <span className="text-amber-600 italic">Responsible Delivery.</span>
+                     </h2>
+                     <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                        <p>
+                           My name is Mindy Bhandher. I take full responsibility for my past. But I use that experience to help students today.
+                        </p>
+                        <p>
+                           The goal isn't to scare them. It's to help them build the safety I didn't have, and the emotional tools I didn't know existed.
+                        </p>
+                        <p className="font-medium text-navy-900 pt-4 border-t border-slate-200">
+                           Now, I help students build a world where they don't have to make the same mistakes.
                         </p>
                      </div>
-                  </Reveal>
-               </div>
+                  </div>
 
-               <div className="order-1 lg:order-2">
-                  <Reveal delay={0.2}>
-                     <div className="relative">
-                        <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-2xl">
-                           <img
-                              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-                              alt="Mindy Bhandher"
-                              className="w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700"
-                           />
-                        </div>
-                        <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-r-2 border-b-2 border-amber-500 -z-10 hidden md:block"></div>
-                     </div>
-                  </Reveal>
                </div>
+            </motion.div>
 
-            </div>
-         </div>
+         </motion.div>
       </section>
    );
 };
