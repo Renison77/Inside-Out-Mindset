@@ -56,7 +56,7 @@ const Navbar = () => {
                   ))}
                   <button
                      onClick={() => scrollTo('#booking')}
-                     className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${scrolled ? 'border-navy-900 hover:bg-navy-900 hover:text-white' : 'bg-white border-white hover:bg-slate-50'}`}
+                     className={`px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${scrolled ? 'border-navy-900 hover:bg-navy-900 hover:text-white' : 'bg-white border-white text-navy-900 hover:bg-amber-500 hover:text-white hover:border-amber-500'}`}
                   >
                      Book Now
                   </button>

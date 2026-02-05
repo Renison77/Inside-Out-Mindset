@@ -13,13 +13,13 @@ import Booking from './components/Booking';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import Loader from './components/Loader';
-import StickyCTA from './components/StickyCTA';
+
 
 const App = () => {
   return (
     <SmoothScroll>
       <Loader />
-      <StickyCTA />
+
       <div className="font-sans antialiased text-navy-900 selection:bg-amber-200 selection:text-navy-900 bg-white">
         <Navbar />
         <Hero />

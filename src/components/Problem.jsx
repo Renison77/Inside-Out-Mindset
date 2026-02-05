@@ -59,7 +59,7 @@ const Problem = () => {
                         style={{ left: "50%", scale: useTransform(lineProgress, [0.4, 0.6], [0.8, 1.5]) }}
                         className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(245,158,11,0.5)] z-10"
                      >
-                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-amber-500/10 text-amber-500 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-amber-500/20">
+                        <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-amber-500/10 text-amber-500 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-amber-500/20">
                            Intervention Needed
                         </div>
                      </motion.div>
@@ -67,21 +67,21 @@ const Problem = () => {
                      <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-red-600 rounded-full border-2 border-navy-900" />
                   </div>
 
-                  <div className="mt-12 grid grid-cols-2 gap-8">
+                  <div className="mt-24 grid grid-cols-2 gap-8">
                      <div className="border-l border-slate-700 pl-6">
-                        <h4 className="text-slate-300 font-serif italic text-xl mb-2">Starts Here</h4>
-                        <ul className="text-slate-500 text-sm space-y-2">
+                        <h4 className="text-slate-200 font-serif italic text-xl mb-2">Starts Here</h4>
+                        <ul className="text-slate-300 text-sm space-y-2">
                            <li>• Social Isolation</li>
                            <li>• "Status" Teasing</li>
                            <li>• Impulsive Choices</li>
                         </ul>
                      </div>
-                     <div className="border-l border-red-900/50 pl-6 text-right lg:text-left">
+                     <div className="border-r border-red-500/50 pr-6 text-right">
                         <h4 className="text-red-400 font-serif italic text-xl mb-2">Ends Here</h4>
-                        <ul className="text-red-900/60 text-sm space-y-2">
-                           <li>• Violence / Gangs</li>
-                           <li>• School Dropouts</li>
-                           <li>• Criminal Record</li>
+                        <ul className="text-red-300 text-sm space-y-2">
+                           <li>Violence / Gangs •</li>
+                           <li>School Dropouts •</li>
+                           <li>Criminal Record •</li>
                         </ul>
                      </div>
                   </div>

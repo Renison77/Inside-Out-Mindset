@@ -14,7 +14,10 @@ const Card = ({ item, index }) => {
          <div className="relative w-full h-full transition-all duration-700 transform-style-3d group-hover:rotate-y-180">
 
             {/* Front Face */}
-            <div className="absolute w-full h-full backface-hidden bg-white border border-slate-200 p-8 flex flex-col justify-between shadow-sm group-hover:shadow-xl transition-shadow rounded-sm overflow-hidden">
+            <div
+               className="absolute w-full h-full backface-hidden bg-white border border-slate-200 p-8 flex flex-col justify-between shadow-sm group-hover:shadow-xl transition-shadow rounded-sm overflow-hidden"
+               style={{ transform: "translateZ(1px)" }}
+            >
                <div className="absolute top-0 right-0 p-32 bg-amber-50/50 rounded-bl-full -mr-16 -mt-16 z-0"></div>
                <div className="relative z-10">
                   <div className="w-14 h-14 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-8 text-amber-600 shadow-sm">
@@ -33,17 +36,20 @@ const Card = ({ item, index }) => {
             </div>
 
             {/* Back Face */}
-            <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-navy-900 text-white p-8 flex flex-col justify-center shadow-xl rounded-sm">
-               <h4 className="text-xl font-serif italic text-amber-500 mb-6">{item.outcomesTitle}</h4>
+            <div
+               className="absolute w-full h-full backface-hidden rotate-y-180 bg-navy-900 text-white p-8 flex flex-col justify-center shadow-xl rounded-sm"
+               style={{ transform: "rotateY(180deg) translateZ(1px)" }}
+            >
+               <h4 className="text-2xl font-serif italic text-amber-500 mb-6">{item.outcomesTitle}</h4>
                <ul className="space-y-4 mb-8">
                   {item.outcomes.map((outcome, i) => (
-                     <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                     <li key={i} className="flex items-start gap-3 text-base text-slate-100">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
                         <span className="leading-relaxed">{outcome}</span>
                      </li>
                   ))}
                </ul>
-               <p className="text-xs leading-relaxed text-slate-400 border-t border-navy-800 pt-6 italic">
+               <p className="text-sm leading-relaxed text-slate-300 border-t border-navy-800 pt-6 italic font-light">
                   "{item.desc}"
                </p>
             </div>

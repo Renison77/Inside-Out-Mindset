@@ -28,7 +28,7 @@ const Success = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                {benefits.map((item, i) => (
-                  <Reveal delay={i * 0.1} key={i}>
+                  <Reveal delay={i * 0.1} key={i} width="100%" fullHeight>
                      <div className="bg-navy-800/50 border border-navy-700/50 p-8 rounded-sm hover:bg-navy-800 transition-colors hover:border-amber-500/30 group h-full">
                         <div className="w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-black/20">
                            {item.icon}

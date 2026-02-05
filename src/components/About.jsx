@@ -16,8 +16,8 @@ const About = () => {
 
    // Background Colors/Images
    const bgColor = useTransform(scrollYProgress,
-      [0, 0.3, 0.6, 1],
-      ["#020C1B", "#112240", "#F8FAF9", "#F8FAF9"] // Dark Navy -> Navy -> Off White
+      [0, 0.6, 0.7, 1],
+      ["#020C1B", "#112240", "#F8FAF9", "#F8FAF9"] // Dark Navy (Scene 1) -> Navy (Scene 2) -> Transition -> Off White (Scene 3)
    );
 
    return (
@@ -47,7 +47,7 @@ const About = () => {
                className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
                <div className="max-w-3xl text-center px-6">
-                  <h2 className="text-4xl md:text-5xl font-sans font-light text-slate-300 mb-8 leading-tight">
+                  <h2 className="text-4xl md:text-5xl font-sans font-normal text-slate-200 mb-8 leading-tight">
                      I know what poor decisions look like.
                      <br /><span className="text-amber-500 font-serif italic">But I also know how to interrupt them.</span>
                   </h2>
@@ -70,16 +70,7 @@ const About = () => {
                            className="w-full h-full object-cover grayscale contrast-125"
                         />
                      </div>
-                     {/* Cultural Badge */}
-                     <div className="absolute -bottom-8 -right-8 bg-white p-6 shadow-xl border border-slate-100 hidden md:flex items-center gap-4 max-w-xs">
-                        <div className="bg-amber-100 p-3 rounded-full text-amber-600">
-                           <Globe size={24} />
-                        </div>
-                        <div>
-                           <h4 className="font-serif text-navy-900 text-lg">Punjabi Fluent</h4>
-                           <p className="text-xs text-slate-500">Culturally relevant delivery.</p>
-                        </div>
-                     </div>
+
                   </div>
 
                   {/* Text Side */}

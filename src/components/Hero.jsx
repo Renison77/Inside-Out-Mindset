@@ -21,15 +21,16 @@ const Hero = () => {
                loop
                muted
                playsInline
-               className="w-full h-full object-cover opacity-50 scale-105"
+               poster="https://images.pexels.com/videos/5223126/pictures/preview-0.jpg"
+               className="w-full h-full object-cover opacity-40 scale-105"
             >
-               {/* Placeholder for School Hallway Blur */}
-               <source src="https://videos.pexels.com/video-files/5223126/5223126-sd_640_360_25fps.mp4" type="video/mp4" />
+               {/* Cinematic Dark School Hallway */}
+               <source src="https://videos.pexels.com/video-files/5223126/5223126-hd_1920_1080_25fps.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent z-20"></div>
          </motion.div>
 
-         <div className="relative z-30 max-w-[1400px] mx-auto px-6 w-full text-center md:text-left pt-20 pb-32">
+         <div className="relative z-30 max-w-[1400px] mx-auto px-6 w-full text-center md:text-left pt-48 pb-48">
             <Reveal>
                <div className="flex flex-col md:flex-row gap-6 md:items-center mb-8">
                   <div className="h-[2px] w-12 bg-amber-500 hidden md:block"></div>
