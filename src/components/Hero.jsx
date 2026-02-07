@@ -1,95 +1,95 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, Star } from 'lucide-react';
+import { ArrowRight, Play, ChevronDown } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 const Hero = () => {
    const { scrollY } = useScroll();
    const y = useTransform(scrollY, [0, 500], [0, 200]);
+   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
    return (
       <section id="hero" className="relative h-screen flex flex-col items-center justify-center bg-navy-950 overflow-hidden">
 
-         {/* Cinemagraph Background (Video Loop) */}
+         {/* Cinematic Background */}
          <motion.div
             style={{ y }}
             className="absolute inset-0 z-0"
          >
-            <div className="absolute inset-0 bg-navy-950/60 z-10"></div>
+            <div className="absolute inset-0 bg-navy-950/70 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-navy-950/40 z-20"></div>
             <video
                autoPlay
                loop
                muted
                playsInline
                poster="https://images.pexels.com/videos/5223126/pictures/preview-0.jpg"
-               className="w-full h-full object-cover opacity-40 scale-105"
+               className="w-full h-full object-cover opacity-30 scale-105"
             >
-               {/* Cinematic Dark School Hallway */}
                <source src="https://videos.pexels.com/video-files/5223126/5223126-hd_1920_1080_25fps.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 to-transparent z-20"></div>
          </motion.div>
 
-         <div className="relative z-30 max-w-[1400px] mx-auto px-6 w-full text-center md:text-left pt-48 pb-48">
+         <div className="relative z-30 max-w-[1200px] mx-auto px-6 w-full text-center pt-20">
             <Reveal>
-               <div className="flex flex-col md:flex-row gap-6 md:items-center mb-8">
-                  <div className="h-[2px] w-12 bg-amber-500 hidden md:block"></div>
-                  <span className="text-amber-500 text-xs font-bold tracking-[0.3em] uppercase">
-                     <span className="text-white">Respect</span> • <span className="text-white">Self-Control</span> • <span className="text-amber-500">Better Decisions</span>
+               <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="flex flex-col items-center mb-8"
+               >
+                  <span className="text-amber-500 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 bg-navy-900/50 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
+                     Inside Out Mindset
                   </span>
-               </div>
 
-               <h1 className="text-6xl md:text-8xl lg:text-9xl font-sans font-medium text-white leading-[0.9] tracking-tight mb-8">
-                  Stop the spiral<br />
-                  <span className="font-serif italic text-sage-500 font-light opacity-90">before it starts.</span>
-               </h1>
+                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-sans font-medium text-white leading-[1.1] md:leading-[1] tracking-tight mb-8">
+                     Stop the spiral<br />
+                     <span className="font-serif italic text-slate-400 font-light opacity-90">before it starts.</span>
+                  </h1>
 
-               <p className="text-lg md:text-2xl text-slate-300 max-w-2xl font-light leading-relaxed my-10 font-sans">
-                  Equip students with the tools to choose <span className="text-white">respect and self-control.</span> Practical prevention, not fear.
-               </p>
+                  <p className="text-lg md:text-2xl text-slate-300 max-w-3xl font-light leading-relaxed mb-6 font-sans">
+                     Prevention-focused talks for <span className="text-white">high school students</span> and <span className="text-white">parents</span>. Inside-out mindset, emotional self-control, and better decisions under pressure.
+                  </p>
 
-               <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start relative z-50">
-                  <button
-                     onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
-                     className="px-8 py-4 bg-amber-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-navy-950 transition-all duration-300 shadow-[0_0_30px_rgba(217,119,6,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]"
-                  >
-                     Request Booking
-                  </button>
-                  <button
-                     className="group flex items-center gap-4 text-white uppercase tracking-widest text-xs font-bold hover:text-amber-500 transition-colors"
-                     onClick={() => document.getElementById('offer').scrollIntoView({ behavior: 'smooth' })}
-                  >
-                     <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-amber-500 group-hover:bg-amber-500/10 transition-all">
-                        <Play size={14} fill="currentColor" />
-                     </div>
-                     See How It Works
-                  </button>
-               </div>
+                  <p className="text-xs md:text-sm text-slate-500 max-w-2xl leading-relaxed mb-10 border-t border-white/10 pt-6 mt-2">
+                     Prevention only. Not enforcement, not surveillance, not "catching" anyone.
+                     Not "scared straight." Practical tools, not fear. No glorifying crime or violence.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full">
+                     <button
+                        onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
+                        className="w-full sm:w-auto px-10 py-4 bg-amber-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-navy-950 transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] rounded-sm"
+                     >
+                        Request Booking
+                     </button>
+                     <button
+                        className="w-full sm:w-auto px-10 py-4 border border-white/20 text-white uppercase tracking-widest text-xs font-bold hover:bg-white/10 transition-colors rounded-sm flex items-center justify-center gap-2"
+                        onClick={() => document.getElementById('talks').scrollIntoView({ behavior: 'smooth' })}
+                     >
+                        View Talk Options
+                     </button>
+                  </div>
+
+                  <div className="mt-8">
+                     <button
+                        onClick={() => document.getElementById('advisory').scrollIntoView({ behavior: 'smooth' })}
+                        className="text-slate-400 text-xs uppercase tracking-widest hover:text-amber-500 transition-colors border-b border-transparent hover:border-amber-500 pb-1"
+                     >
+                        Advisory / Thought Partnership
+                     </button>
+                  </div>
+               </motion.div>
             </Reveal>
          </div>
 
-         {/* Trust Ticker - Pinned to Bottom */}
-         <div className="absolute bottom-0 w-full z-30 border-t border-white/10 bg-navy-950/50 backdrop-blur-sm">
-            <div className="max-w-[1400px] mx-auto">
-               <div className="flex flex-col md:flex-row items-center">
-                  <div className="py-4 md:py-6 px-6 md:border-r border-white/10 text-xs font-bold uppercase tracking-widest text-slate-500 shrink-0">
-                     Trusted By
-                  </div>
-                  <div className="flex-1 overflow-hidden relative group">
-                     {/* Marquee Animation */}
-                     <div className="flex gap-12 py-4 px-6 md:animate-marquee whitespace-nowrap">
-                        {["School District 36", "RCMP", "KidsPlay", "City of Surrey", "United Way", "YMCA", "Boys & Girls Club"].map((partner, i) => (
-                           <span key={i} className="text-slate-400 font-serif italic text-lg opacity-60 hover:opacity-100 transition-opacity cursor-default">{partner}</span>
-                        ))}
-                        {/* Duplicate for infinite loop */}
-                        {["School District 36", "RCMP", "KidsPlay", "City of Surrey", "United Way", "YMCA", "Boys & Girls Club"].map((partner, i) => (
-                           <span key={`dup-${i}`} className="text-slate-400 font-serif italic text-lg opacity-60 hover:opacity-100 transition-opacity cursor-default hidden md:inline">{partner}</span>
-                        ))}
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+         {/* Scroll Indicator */}
+         <motion.div
+            style={{ opacity }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 animate-bounce"
+         >
+            <ChevronDown size={32} />
+         </motion.div>
 
       </section>
    );

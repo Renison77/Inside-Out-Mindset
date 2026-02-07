@@ -1,14 +1,16 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
-import Offer from './components/Offer';
-import Success from './components/Success';
-import Plan from './components/Plan';
-import Differentiation from './components/Differentiation';
+import Context from './components/Context';
+import Talks from './components/Talks';
+import Outcomes from './components/Outcomes';
+import Process from './components/Process';
+import Method from './components/Method';
+import Advisory from './components/Advisory';
+import Credibility from './components/Credibility';
+import Testimonials from './components/Testimonials';
+import FeaturedWork from './components/FeaturedWork';
 import About from './components/About';
-import Punjabi from './components/Punjabi';
-import Formats from './components/Formats';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
@@ -23,14 +25,16 @@ const App = () => {
       <div className="font-sans antialiased text-navy-900 selection:bg-amber-200 selection:text-navy-900 bg-white">
         <Navbar />
         <Hero />
-        <Problem />
-        <Offer />
-        <Success />
-        <Plan />
-        <Differentiation />
+        <Context />
+        <Talks />
+        <Outcomes />
+        <Process />
+        <Method />
+        <Advisory />
+        <Credibility />
+        <Testimonials />
+        <FeaturedWork />
         <About />
-        <Punjabi />
-        <Formats />
         <Booking />
         <Footer />
       </div>
