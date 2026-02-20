@@ -14,12 +14,12 @@ const Context = () => {
    return (
       <section id="context" ref={containerRef} className="py-24 md:py-32 bg-slate-50 relative overflow-hidden text-navy-900 border-t border-slate-200">
 
-         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+         <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
 
                <Reveal>
                   <h2 className="text-xs font-bold text-amber-600 uppercase tracking-[0.3em] mb-6">The Context</h2>
-                  <h3 className="text-4xl md:text-6xl font-sans font-medium text-navy-900 mb-8 leading-[1.1] tracking-tight">
+                  <h3 className="text-3xl md:text-6xl font-sans font-medium text-navy-900 mb-8 leading-[1.1] tracking-tight">
                      The gap between a bad day and a bad life is <span className="text-sage-500 italic font-serif">smaller than you think.</span>
                   </h3>
                   <p className="text-slate-500 text-lg leading-relaxed max-w-lg">
@@ -35,7 +35,7 @@ const Context = () => {
                   <Reveal delay={0.2}>
                      <div className="flex justify-between text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">
                         <span>Small Issues</span>
-                        <span className="text-amber-600">The Pivot Point</span>
+                        <span className="text-amber-600 font-extrabold translate-y-[-2px] inline-block text-center px-2">The Pivot Point</span>
                         <span className="text-red-500">Critical Issues</span>
                      </div>
 
@@ -52,7 +52,7 @@ const Context = () => {
                            style={{ left: "50%", scale: useTransform(lineProgress, [0.4, 0.6], [0.8, 1.2]) }}
                            className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] z-10"
                         >
-                           <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-amber-600 px-3 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-slate-200 shadow-sm">
+                           <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-amber-600 px-3 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-slate-200 shadow-sm">
                               Intervention Needed
                            </div>
                         </motion.div>
@@ -60,7 +60,7 @@ const Context = () => {
                         <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-red-400 rounded-full" />
                      </div>
 
-                     <div className="mt-16 grid grid-cols-2 gap-8">
+                     <div className="mt-16 grid grid-cols-2 gap-4 md:gap-8">
                         <div className="border-l border-slate-300 pl-6">
                            <h4 className="text-navy-900 font-serif italic text-xl mb-2">Starts Here</h4>
                            <ul className="text-slate-500 text-sm space-y-2 font-medium">

@@ -5,12 +5,12 @@ import { CheckCircle2 } from 'lucide-react';
 const Credibility = () => {
    return (
       <section className="py-20 bg-white border-b border-slate-100">
-         <div className="max-w-[1000px] mx-auto px-6 text-center">
+         <div className="max-w-[1000px] mx-auto px-4 md:px-6 text-center">
 
             <Reveal>
                <h2 className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-10">Trusted Experience</h2>
 
-               <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 text-left max-w-3xl mx-auto">
+               <div className="grid md:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-6 text-left max-w-3xl mx-auto">
                   {[
                      "Guest speaker: Kwantlen Polytechnic University (Criminology) — 12 class sessions (invited by Dr. Alana Abramson)",
                      "Guest speaker: Justice Institute of BC — multiple sessions (via Dr. Sunny Mangat / associated cohorts)",

@@ -26,17 +26,17 @@ const Process = () => {
 
    return (
       <section id="process" className="py-24 md:py-32 bg-white relative">
-         <div className="max-w-[1200px] mx-auto px-6">
+         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
             <div className="text-center mb-20 max-w-2xl mx-auto">
                <Reveal>
                   <h2 className="text-xs font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">Process</h2>
-                  <h3 className="text-4xl md:text-5xl font-sans font-medium text-navy-900 mb-6">How booking works</h3>
+                  <h3 className="text-3xl md:text-5xl font-sans font-medium text-navy-900 mb-6">How booking works</h3>
                   <div className="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
                </Reveal>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 relative">
 
                {/* Connector Line (Desktop) */}
                <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[2px] bg-slate-100 z-0"></div>

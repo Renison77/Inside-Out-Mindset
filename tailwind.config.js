@@ -13,10 +13,10 @@ export default {
       },
       colors: {
         navy: {
-          950: '#030812', // Deep Charcoal Navy - Almost Black
-          900: '#0B1729', // Oxford Blue - Primary Dark
-          800: '#17253D', // Lighter Oxford - Secondary Dark
-          700: '#2A3C5F', // Muted Navy
+          950: '#0F172A', // Slate 900 - Keep distinct from black for premium look
+          900: '#1E3A8A', // Deep Royal - Richer blue
+          800: '#1E40AF', // Bright Royal
+          700: '#3B82F6', // Blue 500 equivalent - Hopeful blue
         },
         slate: {
           50: '#F9FAFB', // Ultra light grey
@@ -27,9 +27,9 @@ export default {
           500: '#64748B', // Body text
         },
         amber: {
-          400: '#F0C05A', // Muted Gold (Readable on dark)
-          500: '#D9A136', // Academy Gold
-          600: '#B08022', // Bronze
+          400: '#FBBF24', // Sunny Gold
+          500: '#F59E0B', // Vibrant Amber
+          600: '#D97706', // Deep Gold - Contrast
         },
         sage: {
           500: '#7B9C96', // Muted Teal/Sage

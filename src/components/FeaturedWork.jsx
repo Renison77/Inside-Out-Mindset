@@ -23,13 +23,13 @@ const FeaturedWork = () => {
 
    return (
       <section className="py-24 bg-slate-50 relative">
-         <div className="max-w-[1200px] mx-auto px-6">
+         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
             <Reveal>
                <h2 className="text-xs font-bold text-navy-900 uppercase tracking-[0.3em] mb-12 border-b border-slate-200 pb-4">Featured Work & Media</h2>
             </Reveal>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                {media.map((item, i) => (
                   <Reveal delay={i * 0.2} key={i}>
                      <div className="group cursor-pointer">

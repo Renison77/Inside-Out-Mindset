@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
    return (
       <footer className="bg-navy-950 text-slate-500 border-t border-navy-900 pt-20 pb-10 text-sm">
-         <div className="max-w-[1200px] mx-auto px-6">
+         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
             <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
                <div className="max-w-xs">
@@ -15,7 +15,7 @@ const Footer = () => {
                   </p>
                </div>
 
-               <div className="grid grid-cols-2 gap-12 md:gap-24">
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-24 w-full md:w-auto">
                   <div>
                      <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Navigation</h4>
                      <ul className="space-y-3">

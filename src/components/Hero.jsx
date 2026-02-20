@@ -16,8 +16,8 @@ const Hero = () => {
             style={{ y }}
             className="absolute inset-0 z-0"
          >
-            <div className="absolute inset-0 bg-navy-950/70 z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-navy-950/40 z-20"></div>
+            <div className="absolute inset-0 bg-navy-900/40 z-10 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-navy-900/30 z-20"></div>
             <video
                autoPlay
                loop
@@ -30,7 +30,7 @@ const Hero = () => {
             </video>
          </motion.div>
 
-         <div className="relative z-30 max-w-[1200px] mx-auto px-6 w-full text-center pt-20">
+         <div className="relative z-30 max-w-[1200px] mx-auto px-4 md:px-6 w-full text-center pt-24 md:pt-32">
             <Reveal>
                <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -38,13 +38,10 @@ const Hero = () => {
                   transition={{ duration: 0.8 }}
                   className="flex flex-col items-center mb-8"
                >
-                  <span className="text-amber-500 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 bg-navy-900/50 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm">
-                     Inside Out Mindset
-                  </span>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-sans font-medium text-white leading-[1.1] md:leading-[1] tracking-tight mb-8">
+                  <h1 className="text-4xl md:text-7xl lg:text-9xl font-sans font-medium text-white leading-[1.1] md:leading-[1] tracking-tight mb-8 drop-shadow-2xl">
                      Stop the spiral<br />
-                     <span className="font-serif italic text-slate-400 font-light opacity-90">before it starts.</span>
+                     <span className="font-serif italic text-slate-400 font-light opacity-90 block mt-2 md:mt-0">before it starts.</span>
                   </h1>
 
                   <p className="text-lg md:text-2xl text-slate-300 max-w-3xl font-light leading-relaxed mb-6 font-sans">
@@ -83,13 +80,7 @@ const Hero = () => {
             </Reveal>
          </div>
 
-         {/* Scroll Indicator */}
-         <motion.div
-            style={{ opacity }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 animate-bounce"
-         >
-            <ChevronDown size={32} />
-         </motion.div>
+
 
       </section>
    );

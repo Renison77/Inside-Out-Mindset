@@ -4,9 +4,9 @@ import { Reveal } from './Reveal';
 const About = () => {
    return (
       <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
-         <div className="max-w-[1200px] mx-auto px-6">
+         <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
 
                {/* Image Side */}
                <div className="lg:col-span-5 relative order-2 lg:order-1">
@@ -34,7 +34,7 @@ const About = () => {
                      <div className="inline-block px-3 py-1 bg-slate-100 text-slate-500 rounded-sm text-[10px] font-bold uppercase tracking-widest mb-6">
                         About Mindy
                      </div>
-                     <h2 className="text-5xl md:text-7xl font-sans font-medium text-navy-900 mb-8 leading-[0.95] tracking-tight">
+                     <h2 className="text-4xl md:text-7xl font-sans font-medium text-navy-900 mb-8 leading-[0.95] tracking-tight">
                         Real Experience.<br />
                         <span className="font-serif italic text-amber-600 font-light">Responsible Delivery.</span>
                      </h2>

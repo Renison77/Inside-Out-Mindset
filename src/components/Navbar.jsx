@@ -31,14 +31,14 @@ const Navbar = () => {
    };
 
    return (
-      <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-slate-200" : "bg-transparent py-6 border-transparent"}`}>
-         <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center">
+      <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-slate-200" : "bg-transparent py-4 md:py-6 border-transparent"}`}>
+         <div className="max-w-[1400px] mx-auto px-4 md:px-6 flex justify-between items-center">
 
             {/* Logo */}
             <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('#hero')}>
-               <div className={`flex items-center justify-center font-serif font-bold rounded-sm transition-all duration-300 ${scrolled ? "text-navy-900" : "text-navy-900"}`}>
+               <div className={`flex items-center justify-center font-serif font-bold rounded-sm transition-all duration-300 ${scrolled ? "text-navy-900" : "text-white"}`}>
                   {/* Logo Placeholder or SVG - Using Text as placeholder for now, ensuring size constraints */}
-                  <span className="text-[28px] md:text-[32px] tracking-tight leading-none">
+                  <span className="text-[24px] md:text-[32px] tracking-tight leading-none">
                      INSIDE<span className="text-amber-600 italic">OUT</span>
                   </span>
                </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
                   <button
                      key={link.name}
                      onClick={() => scrollTo(link.href)}
-                     className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors relative group py-2 ${scrolled ? "text-slate-500 hover:text-navy-900" : "text-navy-900/80 hover:text-navy-900"}`}
+                     className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors relative group py-2 ${scrolled ? "text-slate-500 hover:text-navy-900" : "text-white/90 hover:text-white"}`}
                   >
                      {link.name}
                      <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-amber-500 group-hover:w-full transition-all duration-300"></span>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
             {/* Mobile Toggle */}
             <div className="lg:hidden">
-               <button onClick={() => setIsOpen(true)} className="text-navy-900 p-2">
+               <button onClick={() => setIsOpen(true)} className={`p-2 transition-colors ${scrolled ? 'text-navy-900' : 'text-white'}`}>
                   <Menu size={24} />
                </button>
             </div>
