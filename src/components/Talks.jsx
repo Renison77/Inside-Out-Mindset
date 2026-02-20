@@ -8,10 +8,10 @@ const Card = ({ item, index }) => {
 
    return (
       <motion.div
-         layout
          initial={{ opacity: 0, y: 20 }}
          whileInView={{ opacity: 1, y: 0 }}
-         transition={{ delay: index * 0.1 }}
+         viewport={{ once: true }}
+         transition={{ delay: index * 0.1, duration: 0.5 }}
          onClick={() => setIsExpanded(!isExpanded)}
          className={`relative w-full cursor-pointer transition-all duration-500 ease-in-out bg-white border border-slate-200 shadow-sm hover:shadow-xl rounded-sm overflow-hidden flex flex-col ${isExpanded ? 'ring-2 ring-amber-500 ring-offset-4 ring-offset-slate-50' : 'min-h-[420px] md:min-h-[480px]'}`}
       >
@@ -35,22 +35,15 @@ const Card = ({ item, index }) => {
                {item.oneLiner}
             </p>
 
-            {/* Preview Bullets (Fade out when expanded) */}
-            <AnimatePresence>
-               {!isExpanded && (
-                  <motion.ul
-                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                     className="space-y-3 mb-8"
-                  >
-                     {item.previewBullets.map((bullet, i) => (
-                        <li key={i} className="flex items-center gap-3 text-sm text-slate-500">
-                           <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                           {bullet}
-                        </li>
-                     ))}
-                  </motion.ul>
-               )}
-            </AnimatePresence>
+            {/* Preview Bullets - Always Visible */}
+            <ul className="space-y-3 mb-6">
+               {item.previewBullets.map((bullet, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm text-slate-500">
+                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                     {bullet}
+                  </li>
+               ))}
+            </ul>
          </div>
 
          {/* Expanded Content */}
@@ -121,7 +114,7 @@ const Talks = () => {
    ];
 
    return (
-      <section id="talks" className="py-24 md:py-32 bg-slate-50 relative scroll-mt-20">
+      <section id="talks" className="py-24 md:py-32 bg-white relative scroll-mt-20 border-t border-slate-200">
          <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
             <div className="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-16 border-b border-slate-200 pb-8 md:pb-10">
@@ -135,8 +128,7 @@ const Talks = () => {
                         <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Prevention First</span>
                      </div>
                      <h2 className="text-3xl md:text-6xl font-sans font-medium text-navy-900 tracking-tight leading-[1.1]">
-                        Choose Your <br />
-                        <span className="font-serif italic text-amber-600 font-light">Audience</span>
+                        Choose Your <span className="font-serif italic text-amber-600 font-light">Audience</span>
                      </h2>
                   </Reveal>
                </div>
