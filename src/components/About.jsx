@@ -12,34 +12,34 @@ const About = () => {
                <div className="lg:col-span-5 relative order-2 lg:order-1">
                   <Reveal>
                      <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
-                        <div className="absolute inset-0 bg-navy-900/10 z-10"></div>
+                        <div className="absolute inset-0 bg-primary-900/10 z-10"></div>
                         <img
                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" // Placeholder Headshot
                            alt="Mindy Bhandher"
                            className="w-full h-full object-cover grayscale contrast-110"
                         />
-                        <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-navy-950/90 to-transparent z-20">
+                        <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-primary-950/90 to-transparent z-20">
                            <p className="text-white font-serif italic text-lg opacity-90">"Prevention isn't soft. It's protection."</p>
                         </div>
                      </div>
 
                      {/* Decorative Element */}
-                     <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-500/10 -z-10 rounded-full blur-2xl"></div>
+                     <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-500/10 -z-10 rounded-full blur-2xl"></div>
                   </Reveal>
                </div>
 
                {/* Text Side */}
                <div className="lg:col-span-7 order-1 lg:order-2">
                   <Reveal delay={0.2}>
-                     <div className="inline-block px-3 py-1 bg-slate-100 text-slate-500 rounded-sm text-[10px] font-bold uppercase tracking-widest mb-6">
+                     <div className="inline-block px-3 py-1 bg-neutral-100 text-neutral-500 rounded-sm text-[10px] font-bold uppercase tracking-widest mb-6">
                         About Mindy
                      </div>
-                     <h2 className="text-4xl md:text-7xl font-sans font-medium text-navy-900 mb-8 leading-[0.95] tracking-tight">
+                     <h2 className="text-4xl md:text-7xl font-sans font-medium text-primary-900 mb-8 leading-[0.95] tracking-tight">
                         I Lived the <br />
-                        <span className="font-serif italic text-amber-600 font-light">Consequences.</span>
+                        <span className="font-serif italic text-secondary-600 font-light">Consequences.</span>
                      </h2>
 
-                     <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-light">
+                     <div className="space-y-6 text-neutral-600 text-lg leading-relaxed font-light">
                         <p>
                            At 30 years old, I was convicted of second-degree murder and spent 12.5 years in prison. I take full responsibility for my actions.
                         </p>
@@ -68,9 +68,9 @@ const About = () => {
                            I share my story so others can recognize the warning signs earlier than I did.
                         </p>
 
-                        <div className="pt-6 border-t border-slate-200 mt-8">
-                           <span className="text-amber-600 font-bold text-sm uppercase tracking-widest flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 bg-amber-600 rounded-full"></span>
+                        <div className="pt-6 border-t border-neutral-200 mt-8">
+                           <span className="text-secondary-600 font-bold text-sm uppercase tracking-widest flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-secondary-600 rounded-full"></span>
                               Punjabi-language parent sessions available
                            </span>
                         </div>

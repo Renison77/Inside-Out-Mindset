@@ -32,10 +32,10 @@ const StickyCTA = () => {
                exit={{ opacity: 0, y: -20, scale: 0.9 }}
                transition={{ duration: 0.3 }}
                onClick={scrollToBooking}
-               className="fixed top-24 right-6 z-40 bg-amber-600 hover:bg-navy-900 text-white shadow-xl shadow-amber-900/20 rounded-full px-5 py-3 flex items-center gap-3 transition-colors group hidden md:flex"
+               className="fixed top-24 right-6 z-40 bg-secondary-600 hover:bg-primary-900 text-white shadow-xl shadow-secondary-900/20 rounded-full px-5 py-3 flex items-center gap-3 transition-colors group hidden md:flex"
             >
-               <span className="text-xs font-bold uppercase tracking-widest group-hover:text-amber-400 transition-colors">Book Now</span>
-               <div className="bg-white/20 p-1 rounded-full group-hover:bg-amber-500 group-hover:text-navy-900 transition-colors">
+               <span className="text-xs font-bold uppercase tracking-widest group-hover:text-secondary-400 transition-colors">Book Now</span>
+               <div className="bg-white/20 p-1 rounded-full group-hover:bg-secondary-500 group-hover:text-primary-900 transition-colors">
                   <Calendar size={14} />
                </div>
             </motion.button>

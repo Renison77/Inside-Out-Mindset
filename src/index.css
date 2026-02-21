@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply font-body text-navy-900 bg-white;
+    @apply font-body text-primary-900 bg-white;
   }
 
   h1,
@@ -23,7 +23,7 @@
   }
 
   p {
-    @apply text-lg leading-relaxed text-slate-500;
+    @apply text-lg leading-relaxed text-neutral-500;
   }
 }
 

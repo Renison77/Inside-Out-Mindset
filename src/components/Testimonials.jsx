@@ -15,22 +15,22 @@ const Testimonials = () => {
    ];
 
    return (
-      <section className="py-24 bg-white border-t border-slate-100 relative overflow-hidden">
+      <section className="py-24 bg-white border-t border-neutral-100 relative overflow-hidden">
          <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
             <div className="text-center mb-16">
                <Reveal>
-                  <Quote size={32} className="text-amber-500 mx-auto mb-6 opacity-80" />
-                  <h2 className="text-3xl md:text-5xl font-serif text-navy-900 mb-6">What people are saying</h2>
+                  <Quote size={32} className="text-secondary-500 mx-auto mb-6 opacity-80" />
+                  <h2 className="text-3xl md:text-5xl font-serif text-primary-900 mb-6">What people are saying</h2>
                </Reveal>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                {quotes.map((quote, i) => (
                   <Reveal delay={i * 0.1} key={i} fullHeight>
-                     <div className="bg-slate-50 p-6 rounded-sm border border-slate-100 hover:shadow-lg transition-all h-full flex flex-col justify-between">
-                        <p className="text-slate-600 font-light italic text-sm leading-relaxed mb-4">"{quote.text}"</p>
-                        <p className="text-xs font-bold uppercase tracking-widest text-amber-600 border-t border-slate-200 pt-4">{quote.author}</p>
+                     <div className="bg-neutral-50 p-6 rounded-sm border border-neutral-100 hover:shadow-lg transition-all h-full flex flex-col justify-between">
+                        <p className="text-neutral-600 font-light italic text-sm leading-relaxed mb-4">"{quote.text}"</p>
+                        <p className="text-xs font-bold uppercase tracking-widest text-secondary-600 border-t border-neutral-200 pt-4">{quote.author}</p>
                      </div>
                   </Reveal>
                ))}

@@ -15,7 +15,7 @@ const App = () => {
     <SmoothScroll>
       <Loader />
 
-      <div className="font-sans antialiased text-navy-900 selection:bg-amber-200 selection:text-navy-900 bg-white">
+      <div className="font-sans antialiased text-primary-900 selection:bg-secondary-200 selection:text-primary-900 bg-white">
         <Navbar />
         <Hero />
         <Talks />

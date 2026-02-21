@@ -18,18 +18,18 @@ const Formats = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
 
                <Reveal>
-                  <div className="bg-slate-50 p-10 border border-slate-100 rounded-sm">
-                     <h3 className="font-serif text-3xl text-navy-900 mb-8">Formats & Logistics</h3>
+                  <div className="bg-neutral-50 p-10 border border-neutral-100 rounded-sm">
+                     <h3 className="font-serif text-3xl text-primary-900 mb-8">Formats & Logistics</h3>
                      <ul className="space-y-4">
                         {formats.map((item, i) => (
-                           <li key={i} className="flex items-center gap-4 text-slate-700">
-                              <span className="text-amber-500 bg-amber-50 p-2 rounded-full">{item.icon}</span>
+                           <li key={i} className="flex items-center gap-4 text-neutral-700">
+                              <span className="text-secondary-500 bg-secondary-50 p-2 rounded-full">{item.icon}</span>
                               <span className="font-medium">{item.label}</span>
                            </li>
                         ))}
                      </ul>
-                     <div className="mt-8 pt-6 border-t border-slate-200">
-                        <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                     <div className="mt-8 pt-6 border-t border-neutral-200">
+                        <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                            AV Needs: Microphone recommended, projector optional.
                         </p>
                      </div>
@@ -38,11 +38,11 @@ const Formats = () => {
 
                <Reveal delay={0.2}>
                   <div className="relative h-full flex flex-col justify-center">
-                     <h3 className="text-2xl font-serif italic text-navy-800 mb-6">"Easy to work with from start to finish."</h3>
-                     <p className="text-slate-600 mb-8">
+                     <h3 className="text-2xl font-serif italic text-primary-800 mb-6">"Easy to work with from start to finish."</h3>
+                     <p className="text-neutral-600 mb-8">
                         We handle the scheduling coordination so you can focus on your students.
                      </p>
-                     <button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })} className="self-start text-xs font-bold uppercase tracking-widest text-amber-600 border-b-2 border-amber-600 pb-1 hover:text-navy-900 hover:border-navy-900 transition-all">
+                     <button onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })} className="self-start text-xs font-bold uppercase tracking-widest text-secondary-600 border-b-2 border-secondary-600 pb-1 hover:text-primary-900 hover:border-primary-900 transition-all">
                         Check Availability
                      </button>
                   </div>

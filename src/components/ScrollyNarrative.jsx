@@ -71,9 +71,9 @@ const ScrollyNarrative = () => {
    const talksPointerEvents = scrollProgress > 0.8 ? 'auto' : 'none';
 
    // 6. Background Color transitions
-   let bgColor = "bg-slate-50";
-   if (scrollProgress > 0.25 && scrollProgress < 0.6) bgColor = "bg-slate-200";
-   if (scrollProgress >= 0.6) bgColor = "bg-amber-50";
+   let bgColor = "bg-neutral-50";
+   if (scrollProgress > 0.25 && scrollProgress < 0.6) bgColor = "bg-neutral-200";
+   if (scrollProgress >= 0.6) bgColor = "bg-secondary-50";
 
    return (
       <div
@@ -101,10 +101,10 @@ const ScrollyNarrative = () => {
                className="absolute top-[20%] md:top-[25%] left-[10%] md:left-[15%] max-w-md pointer-events-none z-10"
                style={{ opacity: introTextOpacity }}
             >
-               <h2 className="text-5xl md:text-7xl font-serif text-slate-900 font-light mb-4">
-                  The weight of <br /> <span className="italic text-slate-400">expectations.</span>
+               <h2 className="text-5xl md:text-7xl font-serif text-neutral-900 font-light mb-4">
+                  The weight of <br /> <span className="italic text-neutral-400">expectations.</span>
                </h2>
-               <p className="text-lg text-slate-600 font-light">
+               <p className="text-lg text-neutral-600 font-light">
                   Students navigate a complex social landscape every day.
                   One wrong step can feel like the end of the world.
                </p>
@@ -121,24 +121,24 @@ const ScrollyNarrative = () => {
                      alt="Family conflict"
                      className="h-48 md:h-64 mx-auto object-contain mix-blend-multiply opacity-80 mb-6"
                   />
-                  <h2 className="text-2xl md:text-5xl font-serif text-slate-800 font-light translate-y-4 mb-8">
-                     Why schools & families <span className="italic text-slate-500">need this.</span>
+                  <h2 className="text-2xl md:text-5xl font-serif text-neutral-800 font-light tranneutral-y-4 mb-8">
+                     Why schools & families <span className="italic text-neutral-500">need this.</span>
                   </h2>
 
                   {/* points */}
-                  <div className="grid md:grid-cols-3 gap-8 text-left text-slate-700">
-                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-slate-200">
-                        <span className="text-amber-600 font-bold text-xl block mb-2">01.</span>
+                  <div className="grid md:grid-cols-3 gap-8 text-left text-neutral-700">
+                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-neutral-200">
+                        <span className="text-secondary-600 font-bold text-xl block mb-2">01.</span>
                         <h4 className="font-bold text-sm uppercase tracking-wide mb-2">Escalating Behaviour</h4>
                         <p className="text-xs leading-relaxed">Small issues turn into bigger legal and social issues if not addressed early.</p>
                      </div>
-                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-slate-200" style={{ transitionDelay: '100ms' }}>
-                        <span className="text-amber-600 font-bold text-xl block mb-2">02.</span>
+                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-neutral-200" style={{ transitionDelay: '100ms' }}>
+                        <span className="text-secondary-600 font-bold text-xl block mb-2">02.</span>
                         <h4 className="font-bold text-sm uppercase tracking-wide mb-2">Reactive vs. Proactive</h4>
                         <p className="text-xs leading-relaxed">We provide a framework to get ahead of the problem before it starts.</p>
                      </div>
-                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-slate-200" style={{ transitionDelay: '200ms' }}>
-                        <span className="text-amber-600 font-bold text-xl block mb-2">03.</span>
+                     <div className="bg-white/60 p-6 backdrop-blur-sm rounded-sm border border-neutral-200" style={{ transitionDelay: '200ms' }}>
+                        <span className="text-secondary-600 font-bold text-xl block mb-2">03.</span>
                         <h4 className="font-bold text-sm uppercase tracking-wide mb-2">The "Scared Straight" Trap</h4>
                         <p className="text-xs leading-relaxed">We replace shame and lectures with understanding and connection.</p>
                      </div>
@@ -173,14 +173,14 @@ const ScrollyNarrative = () => {
                {/* 4a. Intro Text "Real Hope" */}
                <div className="text-right mb-8 mr-4 md:mr-12">
                   <div style={{ opacity: guideOpacity > 0.5 ? 1 : 0, transition: 'opacity 1s, transform 1s', transform: guideOpacity > 0.5 ? 'translateY(0)' : 'translateY(20px)' }}>
-                     <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-amber-600 mb-2">The Solution</h2>
-                     <h1 className="text-5xl md:text-8xl font-serif text-amber-600 font-bold">
+                     <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-secondary-600 mb-2">The Solution</h2>
+                     <h1 className="text-5xl md:text-8xl font-serif text-secondary-600 font-bold">
                         Real Hope.
                      </h1>
                   </div>
                   <p className="text-zinc-600 text-lg md:text-xl max-w-sm mt-4 ml-auto" style={{ opacity: guideOpacity > 0.8 ? 1 : 0, transition: 'opacity 1s 0.2s' }}>
                      Guidance that understands where they come from. <br />
-                     <span className="font-bold text-zinc-900 border-b border-amber-300">Connection over correction.</span>
+                     <span className="font-bold text-zinc-900 border-b border-secondary-300">Connection over correction.</span>
                   </p>
 
                   {/* Transition Prompt to Next Section */}
@@ -195,7 +195,7 @@ const ScrollyNarrative = () => {
                <img
                   src="/assets/guide_figure.png"
                   alt="Mindy the Guide"
-                  className="h-[60vh] md:h-[75vh] object-contain drop-shadow-xl mix-blend-multiply translate-x-12"
+                  className="h-[60vh] md:h-[75vh] object-contain drop-shadow-xl mix-blend-multiply tranneutral-x-12"
                />
             </div>
 
@@ -214,10 +214,10 @@ const ScrollyNarrative = () => {
                      { title: "High School", subtitle: "Identity & Pressure", desc: "Direct talk on insecurity and decision-making." },
                      { title: "Parents", subtitle: "Raising Confident Kids", desc: "How strong relationships reduce vulnerability." }
                   ].map((talk, i) => (
-                     <div key={i} className="bg-white p-6 rounded-sm shadow-sm border-l-4 border-amber-500 hover:shadow-md transition-shadow">
+                     <div key={i} className="bg-white p-6 rounded-sm shadow-sm border-l-4 border-secondary-500 hover:shadow-md transition-shadow">
                         <div className="flex justify-between items-start">
                            <div>
-                              <h3 className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-1">{talk.title}</h3>
+                              <h3 className="text-xs font-bold uppercase tracking-widest text-secondary-600 mb-1">{talk.title}</h3>
                               <h4 className="text-xl font-serif text-zinc-900 mb-2">{talk.subtitle}</h4>
                               <p className="text-sm text-zinc-500">{talk.desc}</p>
                            </div>
@@ -235,7 +235,7 @@ const ScrollyNarrative = () => {
 
             {/* --- SCROLL PROMPTS --- */}
             {scrollProgress < 0.1 && (
-               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 animate-bounce text-sm uppercase tracking-widest">
+               <div className="absolute bottom-8 left-1/2 -tranneutral-x-1/2 text-neutral-400 animate-bounce text-sm uppercase tracking-widest">
                   Scroll for the story
                </div>
             )}

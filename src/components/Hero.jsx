@@ -9,15 +9,15 @@ const Hero = () => {
    const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
    return (
-      <section id="hero" className="relative h-screen flex flex-col items-center justify-center bg-navy-950 overflow-hidden">
+      <section id="hero" className="relative h-screen flex flex-col items-center justify-center bg-primary-950 overflow-hidden">
 
          {/* Cinematic Background */}
          <motion.div
             style={{ y }}
             className="absolute inset-0 z-0"
          >
-            <div className="absolute inset-0 bg-navy-900/40 z-10 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-navy-900/30 z-20"></div>
+            <div className="absolute inset-0 bg-primary-900/40 z-10 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-transparent to-primary-900/30 z-20"></div>
             <video
                autoPlay
                loop
@@ -43,14 +43,14 @@ const Hero = () => {
                      Stop the spiral
                   </h1>
 
-                  <p className="text-lg md:text-2xl text-slate-300 max-w-3xl font-light leading-relaxed mb-6 font-sans">
+                  <p className="text-lg md:text-2xl text-neutral-300 max-w-3xl font-light leading-relaxed mb-6 font-sans">
                      Prevention-focused talks for <span className="text-white">high school students</span> and <span className="text-white">parents</span>. Inside-out mindset, emotional self-control, and better decisions under pressure.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full mt-6">
                      <button
                         onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
-                        className="w-full sm:w-auto px-10 py-4 bg-amber-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-navy-950 transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] rounded-sm"
+                        className="w-full sm:w-auto px-10 py-4 bg-secondary-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-primary-950 transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] rounded-sm"
                      >
                         Bring this to your organization
                      </button>
