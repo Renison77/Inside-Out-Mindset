@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, ChevronDown } from 'lucide-react';
 import { Reveal } from './Reveal';
+import heroVideo from '../assets/5234909-hd_1920_1080_25fps.mp4';
 
 const Hero = () => {
    const { scrollY } = useScroll();
@@ -16,16 +17,20 @@ const Hero = () => {
             style={{ y }}
             className="absolute inset-0 z-0 bg-neutral-50"
          >
-            <img
-               src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop"
-               alt="Soft abstract hopeful background"
-               className="absolute inset-0 w-full h-full object-cover opacity-60 z-0 scale-105"
-            />
+            <video
+               autoPlay
+               loop
+               muted
+               playsInline
+               className="absolute inset-0 w-full h-full object-cover opacity-90 z-0 scale-105"
+            >
+               <source src={heroVideo} type="video/mp4" />
+            </video>
             {/* Base color overlay */}
-            <div className="absolute inset-0 bg-white/40 z-10"></div>
+            <div className="absolute inset-0 bg-white/10 z-10"></div>
 
             {/* Dynamic Radial Gradient for depth */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-neutral-50/70 to-neutral-50 z-20"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-neutral-50/40 to-neutral-50/80 z-20"></div>
          </motion.div>
 
          <div className="relative z-30 max-w-[1200px] mx-auto px-4 md:px-6 w-full text-center pt-24 md:pt-32">
@@ -39,8 +44,6 @@ const Hero = () => {
 
                   <h1 className="text-5xl md:text-7xl lg:text-[110px] xl:text-[130px] font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
                      <span className="relative z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">Stop the spiral</span>
-                     {/* Subtle glow behind text */}
-                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-secondary-400/20 blur-[100px] z-0 pointer-events-none rounded-full"></div>
                   </h1>
 
                   <p className="text-lg md:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-10 font-sans tracking-wide">
