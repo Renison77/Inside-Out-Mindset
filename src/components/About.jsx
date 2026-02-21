@@ -40,51 +40,36 @@ const About = () => {
                <div className="lg:col-span-7 order-1 lg:order-2 pl-0 md:pl-8">
                   <Reveal delay={0.2}>
                      <div className="inline-block px-4 py-1.5 bg-neutral-100 text-neutral-500 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-neutral-200">
-                        Behind the Message
+                        The Elephant in the Room
                      </div>
                      <h2 className="text-5xl md:text-6xl lg:text-[72px] font-sans font-medium text-primary-900 mb-10 leading-[0.9] tracking-tighter">
-                        I Lived the <br />
-                        <span className="font-serif italic text-secondary-600 font-light">Consequences.</span>
+                        Not Scared Straight. <br />
+                        <span className="font-serif italic text-secondary-600 font-light">Real Talk.</span>
                      </h2>
 
-                     <div className="space-y-6 text-neutral-500 text-lg leading-relaxed font-light relative">
-                        {/* Drop Cap for first paragraph */}
+                     <div className="space-y-6 text-neutral-600 text-lg leading-relaxed font-light relative">
                         <p className="first-letter:text-5xl md:first-letter:text-7xl first-letter:font-serif first-letter:text-primary-900 first-letter:float-left first-letter:mr-4 first-letter:leading-[0.8] first-letter:mt-2">
-                           At 30 years old, I was convicted of second-degree murder and spent 12.5 years in prison. I take full responsibility for my actions.
+                           At 30 years old, I was convicted of second-degree murder and spent 12.5 years in prison. I take full responsibility for my past, but my programs involve <span className="font-medium text-primary-900 text-rose-500">no glorification of violence</span> and do not use fear as a deterrent.
                         </p>
                         <p>
-                           That outcome did not begin with one moment. It began years earlier. As a teenager, I was searching for belonging. I felt abandoned, disconnected, and angry. I gravitated toward people who made me feel accepted.
+                           Instead, my methodology is deeply <span className="font-medium text-primary-900">trauma-informed</span> and purely educational. I pivot away from the shock value of prison and focus entirely on the psychology of decision-making, identifying early warning signs, and building <span className="font-medium text-primary-900">actionable frameworks</span> for emotional regulation.
                         </p>
-
-                        <div className="py-6 my-8 border-y border-neutral-100 pl-6 border-l-2 border-l-secondary-500 ml-4 bg-neutral-50/50">
-                           <p className="text-primary-900 font-serif italic text-xl">
-                              "Over time, my belief system shifted. Loyalty, ego, and reputation became more important than reflection, regulation, or long-term thinking."
-                           </p>
-                        </div>
-
-                        <p>
-                           Small decisions built on top of each other. The lifestyle hardened. The thinking narrowed. And eventually, it culminated in irreversible consequences. Prison forced me to confront the patterns behind my choices. I began studying trauma, emotional regulation, and identity. I saw how unmet needs, distorted beliefs, and unregulated emotion can quietly shape a life.
-                        </p>
-                        <p>
-                           Today, I speak to students, parents, and organizations about where these patterns begin. Not from theory — but from lived experience.
-                        </p>
-                        <p className="text-primary-900 font-medium">
-                           This is not about fear. It is about awareness. It is about understanding how belonging, ego, and external validation can pull young people toward destructive paths — and how emotional regulation, accountability, and clear identity can pull them back.
-                        </p>
-                        <p>
-                           I share my story so others can recognize the warning signs earlier than I did.
-                        </p>
-
-                        <div className="pt-8 mt-10">
-                           <span className="inline-flex items-center gap-3 px-5 py-2.5 bg-neutral-50 border border-neutral-200 rounded-sm text-secondary-600 font-bold text-[10px] uppercase tracking-widest shadow-sm">
-                              <span className="w-1.5 h-1.5 bg-secondary-600 rounded-full animate-pulse"></span>
-                              Punjabi-language parent sessions available
-                           </span>
-                        </div>
                      </div>
                   </Reveal>
                </div>
 
+            </div>
+
+            {/* Trust Badges */}
+            <div className="mt-20 pt-16 border-t border-neutral-200 text-center">
+               <p className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-8">Trusted by Educators and Communities</p>
+               <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-60 grayscale filter">
+                  {/* Placeholder logos for schools/districts */}
+                  <div className="flex items-center gap-2 font-serif text-xl md:text-2xl font-bold px-6 py-3"><span className="text-primary-900">SD</span><span className="text-secondary-600">36</span></div>
+                  <div className="flex items-center font-sans text-lg md:text-xl font-bold px-6 py-3 uppercase tracking-widest text-primary-900 border-l border-neutral-300">Surrey Schools</div>
+                  <div className="flex items-center gap-2 font-serif text-xl md:text-2xl font-bold px-6 py-3 border-l border-neutral-300"><span className="text-primary-900">SD</span><span className="text-secondary-600">41</span></div>
+                  <div className="flex items-center font-sans text-lg md:text-xl font-bold px-6 py-3 uppercase tracking-widest text-primary-900 border-l border-neutral-300">Burnaby</div>
+               </div>
             </div>
 
          </div>

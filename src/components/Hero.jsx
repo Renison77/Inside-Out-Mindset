@@ -42,25 +42,33 @@ const Hero = () => {
                   className="flex flex-col items-center mb-8"
                >
 
-                  <h1 className="text-5xl md:text-7xl lg:text-[110px] xl:text-[130px] font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
-                     <span className="relative z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">Stop the spiral</span>
+                  <h1 className="flex flex-col items-center text-center font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
+                     <span className="text-sm md:text-xl font-bold uppercase tracking-widest text-secondary-600 mb-6 block">Youth Prevention Keynote Speaker</span>
+                     <span className="relative text-5xl md:text-7xl lg:text-[90px] xl:text-[110px] z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">Stopping the Spiral<br />Before It Starts.</span>
                   </h1>
 
                   <p className="text-lg md:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-10 font-sans tracking-wide">
-                     Prevention-focused talks for <span className="text-primary-900 font-medium">high school students</span> and <span className="text-primary-900 font-medium">parents</span>. Inside-out mindset, emotional self-control, and better decisions under pressure.
+                     Mindy Bhandher uses his <span className="text-primary-900 font-medium">12 years of lived experience</span> in the justice system to equip high schoolers and parents with real-world emotional regulation tools.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full relative z-20">
+                  <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full relative z-20 mt-4">
                      <div className="relative group w-full sm:w-auto">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-secondary-400 to-secondary-600 rounded-sm blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                         <button
-                           onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
-                           className="relative w-full sm:w-auto px-10 py-4 bg-primary-900 text-white text-sm font-bold uppercase tracking-[0.2em] hover:bg-secondary-500 hover:text-white transition-all duration-300 rounded-sm border border-transparent flex items-center justify-center gap-3"
+                           onClick={() => alert("Lightbox reel functionality coming soon!")}
+                           className="relative w-full sm:w-auto px-10 py-5 bg-primary-900 text-white text-sm font-bold uppercase tracking-[0.2em] hover:bg-secondary-500 hover:text-white transition-all duration-300 rounded-sm border border-transparent flex items-center justify-center gap-3"
                         >
-                           Bring this to your organization
-                           <ArrowRight size={16} className="text-secondary-400 group-hover:text-white transition-colors" />
+                           Watch the Speaker Reel
+                           <Play size={16} fill="currentColor" className="text-secondary-400 group-hover:text-white transition-colors" />
                         </button>
                      </div>
+                     <button
+                        onClick={() => document.getElementById('advisory')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="relative w-full sm:w-auto px-8 py-4 text-primary-900 text-sm font-bold uppercase tracking-[0.2em] hover:text-secondary-600 transition-all duration-300 flex items-center justify-center gap-3"
+                     >
+                        <span className="border-b border-primary-900 hover:border-secondary-600 pb-1">View Speaking Programs</span>
+                        <ArrowRight size={16} className="-mt-1" />
+                     </button>
                   </div>
                </motion.div>
             </Reveal>

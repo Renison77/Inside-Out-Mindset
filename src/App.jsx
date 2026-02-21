@@ -8,6 +8,8 @@ import Booking from './components/Booking';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import Loader from './components/Loader';
+import Testimonials from './components/Testimonials';
+import LeadCapture from './components/LeadCapture';
 
 
 const App = () => {
@@ -19,9 +21,11 @@ const App = () => {
         <div className="bg-noise fixed inset-0 z-[100] mix-blend-overlay pointer-events-none opacity-[0.03]"></div>
         <Navbar />
         <Hero />
-        <Talks />
-        <Outcomes />
         <About />
+        <Talks />
+        <Testimonials />
+        <Outcomes />
+        <LeadCapture />
         <Booking />
         <Footer />
       </div>
@@ -30,4 +34,3 @@ const App = () => {
 };
 
 export default App;
-
