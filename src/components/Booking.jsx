@@ -45,8 +45,8 @@ const Booking = () => {
 
                      <div className="grid md:grid-cols-2 gap-8">
                         <div className="space-y-2 group">
-                           <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Audience</label>
-                           <select className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all rounded-sm appearance-none">
+                           <label htmlFor="audience-select" className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Audience</label>
+                           <select id="audience-select" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all rounded-sm appearance-none">
                               <option>High School Students</option>
                               <option>Parents</option>
                               <option>Staff / Leadership</option>
