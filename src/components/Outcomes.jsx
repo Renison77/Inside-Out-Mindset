@@ -6,18 +6,18 @@ const Outcomes = () => {
    const benefits = [
       {
          icon: <Zap size={24} />,
-         title: "Message That Lands",
-         text: "A prevention message students actually listen to."
+         title: "Engagement Without Glorification",
+         text: "Students stay engaged without crime being romanticized. The message is honest, accountable, and grounded."
       },
       {
          icon: <ShieldCheck size={24} />,
-         title: "Culture Shift",
-         text: "Reduced bullying and 'status games' in the hallway."
+         title: "Clear Decision-Making Language",
+         text: "Students leave with practical language around pressure, ego, belonging, and consequences they can use immediately."
       },
       {
          icon: <BrainCircuit size={24} />,
-         title: "Emotional Intelligence",
-         text: "Better emotional self-control and decision-making language."
+         title: "Early Intervention Awareness",
+         text: "Students and parents learn how small patterns escalate over time — and how to interrupt them early."
       },
       {
          icon: <Trophy size={24} />,
@@ -45,14 +45,14 @@ const Outcomes = () => {
             <div className="text-center mb-16 max-w-3xl mx-auto">
                <Reveal>
                   <h2 className="text-xs font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">The Impact</h2>
-                  <h3 className="text-3xl md:text-5xl font-sans font-medium text-navy-900 mb-6">What your school or organization gets</h3>
+                  <h3 className="text-3xl md:text-5xl font-sans font-medium text-navy-900 mb-6">Outcomes Schools Care About</h3>
                   <div className="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
                </Reveal>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
                {benefits.map((item, i) => (
-                  <Reveal delay={i * 0.1} key={i}>
+                  <Reveal delay={i * 0.1} key={i} fullHeight={true}>
                      <div className="bg-white border border-slate-200 p-8 rounded-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group h-full shadow-sm">
                         <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
                            {item.icon}

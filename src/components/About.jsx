@@ -35,22 +35,37 @@ const About = () => {
                         About Mindy
                      </div>
                      <h2 className="text-4xl md:text-7xl font-sans font-medium text-navy-900 mb-8 leading-[0.95] tracking-tight">
-                        Real Experience.<br />
-                        <span className="font-serif italic text-amber-600 font-light">Responsible Delivery.</span>
+                        I Lived the <br />
+                        <span className="font-serif italic text-amber-600 font-light">Consequences.</span>
                      </h2>
 
                      <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-light">
                         <p>
-                           My name is Mindy Bhandher. I was raised in Surrey, BC, and I’ve lived both sides of the choices that can either build a life or destroy it. I take full responsibility for my past. I was convicted of second-degree murder and spent 12.5 years incarcerated.
+                           At 30 years old, I was convicted of second-degree murder and spent 12.5 years in prison. I take full responsibility for my actions.
                         </p>
                         <p>
-                           Today, I focus on prevention: helping students, parents, and organizations understand where trouble starts, how it quietly builds over time, and how different choices change outcomes.
+                           That outcome did not begin with one moment. It began years earlier.
                         </p>
                         <p>
-                           This is not a "scared straight" approach. The goal isn’t fear, shock, or shame. The goal is understanding and change: helping people see what drives harmful behaviour, building empathy and belonging, and learning practical tools for emotional regulation, accountability, and better decision-making under pressure. Real-life stories are used responsibly to teach early warning signs and decision points.
+                           As a teenager, I was searching for belonging. I felt abandoned, disconnected, and angry. I gravitated toward people who made me feel accepted. Over time, my belief system shifted. Loyalty, ego, and reputation became more important than reflection, regulation, or long-term thinking.
                         </p>
                         <p>
-                           I’m also a father of two, including a four-year-old daughter. My purpose is to help build a world where kids grow up feeling safe, supported, and hopeful. I believe emotional needs being met is not "soft." It’s protection.
+                           Small decisions built on top of each other. The lifestyle hardened. The thinking narrowed. And eventually, it culminated in irreversible consequences.
+                        </p>
+                        <p>
+                           Prison forced me to confront the patterns behind my choices. I began studying trauma, emotional regulation, and identity. I saw how unmet needs, distorted beliefs, and unregulated emotion can quietly shape a life.
+                        </p>
+                        <p>
+                           Today, I speak to students, parents, and organizations about where these patterns begin. Not from theory — but from lived experience.
+                        </p>
+                        <p>
+                           This is not about fear. It is about awareness. It is about understanding how belonging, ego, and external validation can pull young people toward destructive paths — and how emotional regulation, accountability, and clear identity can pull them back.
+                        </p>
+                        <p>
+                           Prevention isn’t soft. It’s protection.
+                        </p>
+                        <p>
+                           I share my story so others can recognize the warning signs earlier than I did.
                         </p>
 
                         <div className="pt-6 border-t border-slate-200 mt-8">

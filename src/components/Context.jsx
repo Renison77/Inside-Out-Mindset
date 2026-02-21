@@ -33,9 +33,9 @@ const Context = () => {
                {/* Interactive Sliding Scale */}
                <div className="relative pt-12 pb-12">
                   <Reveal delay={0.2}>
-                     <div className="flex justify-between text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">
+                     <div className="flex justify-between text-[9px] md:text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 md:mb-8">
                         <span>Small Issues</span>
-                        <span className="text-amber-600 font-extrabold translate-y-[-2px] inline-block text-center px-2">The Pivot Point</span>
+                        <span className="text-amber-600 font-extrabold translate-y-[-2px] inline-block text-center px-1 md:px-2">The Pivot Point</span>
                         <span className="text-red-500">Critical Issues</span>
                      </div>
 
@@ -46,35 +46,35 @@ const Context = () => {
                         />
 
                         {/* Nodes */}
-                        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-slate-300 rounded-full" />
+                        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-2.5 md:w-3 h-2.5 md:h-3 bg-slate-300 rounded-full" />
 
                         <motion.div
                            style={{ left: "50%", scale: useTransform(lineProgress, [0.4, 0.6], [0.8, 1.2]) }}
-                           className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] z-10"
+                           className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 md:w-4 h-3.5 md:h-4 bg-amber-500 rounded-full shadow-[0_0_20px_rgba(217,119,6,0.4)] z-10"
                         >
-                           <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-amber-600 px-3 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-slate-200 shadow-sm">
+                           <div className="absolute top-7 md:top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-amber-600 px-2 md:px-3 py-1 md:py-1.5 rounded-sm text-[9px] md:text-[10px] font-bold uppercase tracking-widest border border-slate-200 shadow-sm">
                               Intervention Needed
                            </div>
                         </motion.div>
 
-                        <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-red-400 rounded-full" />
+                        <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-2.5 md:w-3 h-2.5 md:h-3 bg-red-400 rounded-full" />
                      </div>
 
-                     <div className="mt-16 grid grid-cols-2 gap-4 md:gap-8">
-                        <div className="border-l border-slate-300 pl-6">
-                           <h4 className="text-navy-900 font-serif italic text-xl mb-2">Starts Here</h4>
-                           <ul className="text-slate-500 text-sm space-y-2 font-medium">
+                     <div className="mt-14 md:mt-16 grid grid-cols-2 gap-3 md:gap-8">
+                        <div className="border-l-2 border-slate-200 pl-4 md:pl-6">
+                           <h4 className="text-navy-900 font-serif italic text-base md:text-xl mb-2">Starts Here</h4>
+                           <ul className="text-slate-500 text-xs md:text-sm space-y-1.5 md:space-y-2 font-medium">
                               <li>• Social Isolation</li>
                               <li>• "Status" Teasing</li>
                               <li>• Impulsive Choices</li>
                            </ul>
                         </div>
-                        <div className="border-r border-red-200 pr-6 text-right">
-                           <h4 className="text-red-500 font-serif italic text-xl mb-2">Ends Here</h4>
-                           <ul className="text-red-400 text-sm space-y-2 font-medium">
-                              <li>High-Risk Peer Groups •</li>
-                              <li>School Disengagement •</li>
-                              <li>Violence / Exploitation •</li>
+                        <div className="border-r-2 border-red-200 pr-4 md:pr-6 text-right">
+                           <h4 className="text-red-500 font-serif italic text-base md:text-xl mb-2">Ends Here</h4>
+                           <ul className="text-red-400 text-xs md:text-sm space-y-1.5 md:space-y-2 font-medium">
+                              <li>High-Risk Peers •</li>
+                              <li>Disengagement •</li>
+                              <li>Exploitation •</li>
                            </ul>
                         </div>
                      </div>

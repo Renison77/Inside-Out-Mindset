@@ -92,9 +92,14 @@ const Talks = () => {
    const talks = [
       {
          cat: "High School",
-         title: "Identity & Pressure",
+         title: "High School Keynote: Identity Under Pressure",
          oneLiner: "Peer pressure, status, and decision-making tools for real-life moments.",
-         previewBullets: ["Tools for emotional regulation under stress", "How small choices become big consequences", "Accountability without shame"],
+         previewBullets: [
+            "Emotional regulation tools for real-life pressure",
+            "How small decisions become major consequences",
+            "Accountability without shame",
+            "Recognizing early warning signs"
+         ],
          expandedTitle: "Real-World Tools",
          expandedBullets: ["Pressure, image, and status dynamics", "Decision-making under stress", "The real cost of one bad choice"],
          outcomeLine: "Students leave with language and tools to pause, think, and choose better.",
@@ -102,9 +107,14 @@ const Talks = () => {
       },
       {
          cat: "Parents",
-         title: "Raising Confident Kids",
+         title: "Parent Session: Connection as Protection",
          oneLiner: "Connection, boundaries, and communication that protects kids as pressure increases.",
-         previewBullets: ["Connection as protection", "Recognizing early warning signs", "Moving from fear to conversation"],
+         previewBullets: [
+            "Building connection before crisis",
+            "Recognizing early warning signs",
+            "Moving from fear to productive conversation",
+            "Boundaries that protect without pushing away"
+         ],
          expandedTitle: "Prevention Strategy",
          expandedBullets: ["How to build trust so kids tell the truth", "Early intervention before problems escalate", "Boundaries with warmth and consistency"],
          outcomeLine: "Parents leave with practical tools they can use immediately.",
@@ -117,27 +127,43 @@ const Talks = () => {
       <section id="talks" className="py-24 md:py-32 bg-white relative scroll-mt-20 border-t border-slate-200">
          <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
-            <div className="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-16 border-b border-slate-200 pb-8 md:pb-10">
-               <div className="max-w-2xl">
+            <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-16 pb-8">
+               <div className="w-full md:w-1/2">
                   <Reveal>
-                     <div className="mb-4 md:mb-6 flex items-center gap-3">
-                        <div className="px-3 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-2">
+                     <div className="mb-6 flex flex-wrap items-center gap-3">
+                        <div className="px-3 py-1 bg-amber-100/80 text-amber-700 text-[10px] font-bold uppercase tracking-widest rounded-sm flex items-center gap-2">
                            <Star size={10} fill="currentColor" />
                            Not "Scared Straight"
                         </div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Prevention First</span>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Prevention First</span>
                      </div>
-                     <h2 className="text-3xl md:text-6xl font-sans font-medium text-navy-900 tracking-tight leading-[1.1]">
-                        Choose Your <span className="font-serif italic text-amber-600 font-light">Audience</span>
+                     <h2 className="text-4xl md:text-6xl lg:text-[72px] font-sans font-medium text-navy-900 tracking-tight leading-[0.9] mb-4">
+                        Speaking<br />
+                        <span className="font-serif italic text-amber-600 font-light">Engagements</span>
                      </h2>
                   </Reveal>
                </div>
-               <Reveal delay={0.2}>
-                  <p className="text-left md:text-right text-slate-500 text-sm max-w-xs leading-relaxed md:ml-auto">
-                     Two signature talks for students and parents. Tailored by audience. Built for impact.
-                     <br /><span className="text-xs font-bold uppercase tracking-widest text-navy-900 mt-3 block opacity-50">Tap cards to view outcomes</span>
-                  </p>
-               </Reveal>
+               <div className="w-full md:w-1/2 md:flex md:flex-col md:items-end md:text-right mt-4 md:mt-0">
+                  <Reveal delay={0.2}>
+                     <div className="flex flex-col gap-6 max-w-lg ml-auto">
+                        <p className="text-slate-500 text-sm md:text-base leading-relaxed">
+                           Keynote talks and workshops for high schools,
+                           parent communities, and organizations focused on
+                           prevention, emotional regulation, and decision-
+                           making under pressure.
+                        </p>
+                        <p className="font-medium text-navy-900 text-sm md:text-base leading-relaxed">
+                           Not a motivational speech. A lived-experience
+                           conversation that teaches students how small
+                           decisions build toward real consequences — and
+                           how to interrupt the pattern early.
+                        </p>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2 block w-full text-right">
+                           Tap cards to view outcomes
+                        </span>
+                     </div>
+                  </Reveal>
+               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -145,6 +171,74 @@ const Talks = () => {
                   <Card key={i} item={talk} index={i} />
                ))}
             </div>
+
+            {/* Additional Info Sections */}
+            <div className="mt-20 md:mt-32 grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+               {/* Format Options */}
+               <Reveal fullHeight={true}>
+                  <div className="bg-slate-50 p-8 md:p-10 border border-slate-100 rounded-sm hover:-translate-y-1 transition-transform duration-500 h-full">
+                     <h3 className="text-xl md:text-2xl font-sans font-medium text-navy-900 mb-6 flex items-center gap-3">
+                        <span className="w-6 h-px bg-amber-500 block"></span>
+                        Format Options
+                     </h3>
+                     <ul className="space-y-4">
+                        {[
+                           "45–60 minute keynote",
+                           "Half-day workshop",
+                           "Parent evening session",
+                           "Combined student + parent programming",
+                           "Punjabi-language sessions available"
+                        ].map((item, i) => (
+                           <li key={i} className="flex items-start gap-3 text-slate-600">
+                              <Check size={18} className="mt-0.5 text-amber-500 shrink-0" />
+                              <span className="leading-relaxed">{item}</span>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+               </Reveal>
+
+               {/* What Organizations Can Expect */}
+               <Reveal delay={0.1} fullHeight={true}>
+                  <div className="bg-slate-50 p-8 md:p-10 border border-slate-100 rounded-sm hover:-translate-y-1 transition-transform duration-500 h-full">
+                     <h3 className="text-xl md:text-2xl font-sans font-medium text-navy-900 mb-6 flex items-center gap-3">
+                        <span className="w-6 h-px bg-amber-500 block"></span>
+                        What Schools and Organizations Can Expect
+                     </h3>
+                     <ul className="space-y-4">
+                        {[
+                           "Professional, structured delivery",
+                           "Age-appropriate content",
+                           "No glorification of crime or violence",
+                           "Trauma-informed approach",
+                           "Clear follow-up resources if needed"
+                        ].map((item, i) => (
+                           <li key={i} className="flex items-start gap-3 text-slate-600">
+                              <Check size={18} className="mt-0.5 text-amber-500 shrink-0" />
+                              <span className="leading-relaxed">{item}</span>
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+               </Reveal>
+            </div>
+
+            {/* CTA Section */}
+            <Reveal delay={0.2}>
+               <div className="mt-20 md:mt-32 text-center border-t border-slate-200 pt-16 md:pt-24 space-y-6">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-medium text-navy-900">
+                     Bring This to Your <span className="font-serif italic text-amber-600 font-light">Organization</span>
+                  </h2>
+                  <p className="text-slate-500 md:text-lg max-w-md mx-auto">
+                     Let’s discuss your audience, goals, and format.
+                  </p>
+                  <div className="pt-6">
+                     <a href="#contact" className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-navy-900 text-white px-8 lg:px-10 py-4 lg:py-5 text-xs lg:text-sm font-bold uppercase tracking-widest hover:bg-amber-600 transition-colors duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl shadow-navy-900/10 hover:-translate-y-0.5">
+                        <span className="flex items-center gap-3">Request a Speaking Engagement <ArrowRight size={16} /></span>
+                     </a>
+                  </div>
+               </div>
+            </Reveal>
 
          </div>
       </section>
