@@ -42,12 +42,13 @@ const Hero = () => {
                   className="flex flex-col items-center mb-8"
                >
 
-                  <h1 className="text-5xl md:text-7xl lg:text-[110px] xl:text-[130px] font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
-                     <span className="relative z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">Stop the spiral</span>
+                  <h1 className="flex flex-col items-center text-center font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
+                     <span className="text-sm md:text-xl font-bold uppercase tracking-widest text-secondary-600 mb-6 block">Youth Prevention Keynote Speaker</span>
+                     <span className="relative text-5xl md:text-7xl lg:text-[90px] xl:text-[110px] z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">From Prison to Purpose</span>
                   </h1>
 
                   <p className="text-lg md:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-10 font-sans tracking-wide">
-                     Prevention-focused talks for <span className="text-primary-900 font-medium">high school students</span> and <span className="text-primary-900 font-medium">parents</span>. Inside-out mindset, emotional self-control, and better decisions under pressure.
+                     I have lived the consequences of many poor decisions and now I share the tools that helped rebuild my life so that others can build something better.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full relative z-20">

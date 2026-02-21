@@ -28,7 +28,7 @@ const Footer = () => {
                      <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Connect</h4>
                      <ul className="space-y-3">
                         <li><a href="#booking" className="hover:text-secondary-500 transition-colors">Contact</a></li>
-                        <li><a href="mailto:mindy@insideoutmindset.com" className="hover:text-secondary-500 transition-colors">Email Us</a></li>
+                        <li><a href="mailto:contact@insideoutmindset.com" className="hover:text-secondary-500 transition-colors">Email Us</a></li>
                      </ul>
                   </div>
                </div>

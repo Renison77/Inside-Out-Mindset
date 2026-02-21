@@ -208,9 +208,9 @@ const Talks = () => {
                      Let’s discuss your audience, goals, and format.
                   </p>
                   <div className="pt-6">
-                     <a href="#contact" className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-primary-900 text-white px-8 lg:px-10 py-4 lg:py-5 text-xs lg:text-sm font-bold uppercase tracking-widest hover:bg-secondary-600 transition-colors duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl shadow-primary-900/10 hover:-tranneutral-y-0.5">
+                     <button onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })} className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-primary-900 text-white px-8 lg:px-10 py-4 lg:py-5 text-xs lg:text-sm font-bold uppercase tracking-widest hover:bg-secondary-600 transition-colors duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl shadow-primary-900/10 hover:-tranneutral-y-0.5">
                         <span className="flex items-center gap-3">Request a Speaking Engagement <ArrowRight size={16} /></span>
-                     </a>
+                     </button>
                   </div>
                </div>
             </Reveal>

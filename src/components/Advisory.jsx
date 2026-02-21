@@ -21,7 +21,7 @@ const Advisory = () => {
                   I also work as a thought partner for organizations and government teams focused on prevention. This is not enforcement work. It’s a prevention lens: understanding where problems start, what drives behavior, and how to build systems and messaging that support better decisions.
                </p>
                <button
-                  onClick={() => window.location.href = "mailto:mindy@insideoutmindset.com?subject=Advisory Inquiry"}
+                  onClick={() => window.location.href = "mailto:contact@insideoutmindset.com?subject=Advisory Inquiry"}
                   className="inline-flex items-center gap-3 text-primary-900 border-b border-secondary-600 pb-1 hover:text-secondary-600 transition-colors uppercase tracking-widest text-sm font-bold"
                >
                   Request an Advisory Call <ArrowRight size={16} />
