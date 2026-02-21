@@ -61,7 +61,7 @@ const Outcomes = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
                {benefits.map((item, i) => (
                   <Reveal delay={i * 0.1} key={i} fullHeight={true}>
-                     <div className="relative group p-10 md:p-12 h-full bg-white border border-neutral-200 rounded-sm hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)] hover:border-secondary-500/30 transition-all duration-500 flex flex-col justify-between z-10 overflow-hidden">
+                     <div className="relative group p-10 md:p-12 h-full bg-white border border-neutral-200 rounded-sm hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.15)] hover:border-secondary-500/30 transition-all duration-500 flex flex-col justify-between z-10 overflow-hidden">
 
                         {/* Subtle gradient hover background */}
                         <div className="absolute inset-0 bg-gradient-to-br from-secondary-50 text-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10"></div>

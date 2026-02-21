@@ -178,14 +178,14 @@ const ScrollyNarrative = () => {
                         Real Hope.
                      </h1>
                   </div>
-                  <p className="text-zinc-600 text-lg md:text-xl max-w-sm mt-4 ml-auto" style={{ opacity: guideOpacity > 0.8 ? 1 : 0, transition: 'opacity 1s 0.2s' }}>
+                  <p className="text-neutral-500 text-lg md:text-xl max-w-sm mt-4 ml-auto" style={{ opacity: guideOpacity > 0.8 ? 1 : 0, transition: 'opacity 1s 0.2s' }}>
                      Guidance that understands where they come from. <br />
-                     <span className="font-bold text-zinc-900 border-b border-secondary-300">Connection over correction.</span>
+                     <span className="font-bold text-primary-900 border-b border-secondary-300">Connection over correction.</span>
                   </p>
 
                   {/* Transition Prompt to Next Section */}
                   <div
-                     className="flex justify-end mt-8 items-center gap-2 text-zinc-400 text-xs font-bold uppercase tracking-widest animate-pulse"
+                     className="flex justify-end mt-8 items-center gap-2 text-neutral-400 text-xs font-bold uppercase tracking-widest animate-pulse"
                      style={{ opacity: guideOpacity > 0.9 ? 1 : 0, transition: 'opacity 1s 1s' }}
                   >
                      Explore the Talks <ArrowDown size={16} />
@@ -204,7 +204,7 @@ const ScrollyNarrative = () => {
                className="absolute left-[5%] md:left-[10%] top-[15%] bottom-[15%] w-[60%] z-30 flex flex-col justify-center"
                style={{ opacity: talksOpacity, pointerEvents: talksPointerEvents }}
             >
-               <h2 className="text-4xl md:text-6xl font-serif text-zinc-900 mb-8 leading-tight">
+               <h2 className="text-4xl md:text-6xl font-serif text-primary-900 mb-8 leading-tight">
                   Three Core <br /> Conversations
                </h2>
 
@@ -218,17 +218,17 @@ const ScrollyNarrative = () => {
                         <div className="flex justify-between items-start">
                            <div>
                               <h3 className="text-xs font-bold uppercase tracking-widest text-secondary-600 mb-1">{talk.title}</h3>
-                              <h4 className="text-xl font-serif text-zinc-900 mb-2">{talk.subtitle}</h4>
-                              <p className="text-sm text-zinc-500">{talk.desc}</p>
+                              <h4 className="text-xl font-serif text-primary-900 mb-2">{talk.subtitle}</h4>
+                              <p className="text-sm text-neutral-500">{talk.desc}</p>
                            </div>
-                           <ArrowDown className="-rotate-90 text-zinc-300" size={20} />
+                           <ArrowDown className="-rotate-90 text-neutral-300" size={20} />
                         </div>
                      </div>
                   ))}
                </div>
 
                {/* Transition Prompt */}
-               <div className="mt-8 text-zinc-400 text-xs font-bold uppercase tracking-widest animate-pulse flex items-center gap-2">
+               <div className="mt-8 text-neutral-400 text-xs font-bold uppercase tracking-widest animate-pulse flex items-center gap-2">
                   Meet Mindy <ArrowDown size={16} />
                </div>
             </div>

@@ -34,7 +34,7 @@ const Navbar = () => {
 
                {/* Logo */}
                <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('#hero')}>
-                  <div className={`flex items-center justify-center font-serif font-bold rounded-sm transition-all duration-300 ${scrolled ? "text-primary-900" : "text-white"}`}>
+                  <div className={`flex items-center justify-center font-serif font-bold rounded-sm transition-all duration-300 ${scrolled ? "text-primary-900" : "text-primary-900"}`}>
                      {/* Logo Placeholder or SVG - Using Text as placeholder for now, ensuring size constraints */}
                      <span className="text-[20px] md:text-[24px] uppercase tracking-tight leading-none">
                         INSIDE <span className="text-secondary-600 italic">OUT</span> MINDSET
@@ -48,7 +48,7 @@ const Navbar = () => {
                      <button
                         key={link.name}
                         onClick={() => scrollTo(link.href)}
-                        className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors relative group py-2 ${scrolled ? "text-neutral-500 hover:text-primary-900" : "text-white/90 hover:text-white"}`}
+                        className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors relative group py-2 ${scrolled ? "text-neutral-500 hover:text-primary-900" : "text-neutral-600 hover:text-primary-900"}`}
                      >
                         {link.name}
                         <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary-500 group-hover:w-full transition-all duration-300"></span>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
                {/* Mobile Toggle */}
                <div className="lg:hidden">
-                  <button onClick={() => setIsOpen(true)} className={`p-2 transition-colors ${scrolled ? 'text-primary-900' : 'text-white'}`}>
+                  <button onClick={() => setIsOpen(true)} className={`p-2 transition-colors ${scrolled ? 'text-primary-900' : 'text-primary-900'}`}>
                      <Menu size={24} />
                   </button>
                </div>

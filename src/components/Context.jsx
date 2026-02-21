@@ -36,13 +36,13 @@ const Context = () => {
                      <div className="flex justify-between text-[9px] md:text-xs font-bold uppercase tracking-widest text-neutral-400 mb-6 md:mb-8">
                         <span>Small Issues</span>
                         <span className="text-secondary-600 font-extrabold tranneutral-y-[-2px] inline-block text-center px-1 md:px-2">The Pivot Point</span>
-                        <span className="text-red-500">Critical Issues</span>
+                        <span className="text-rose-500">Critical Issues</span>
                      </div>
 
                      <div className="relative h-[2px] bg-neutral-200 w-full rounded-full">
                         <motion.div
                            style={{ scaleX: lineProgress, transformOrigin: "left" }}
-                           className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-neutral-400 via-secondary-500 to-red-500"
+                           className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-neutral-400 via-secondary-500 to-rose-500"
                         />
 
                         {/* Nodes */}
@@ -57,7 +57,7 @@ const Context = () => {
                            </div>
                         </motion.div>
 
-                        <div className="absolute top-1/2 right-0 tranneutral-x-1/2 -tranneutral-y-1/2 w-2.5 md:w-3 h-2.5 md:h-3 bg-red-400 rounded-full" />
+                        <div className="absolute top-1/2 right-0 tranneutral-x-1/2 -tranneutral-y-1/2 w-2.5 md:w-3 h-2.5 md:h-3 bg-rose-400 rounded-full" />
                      </div>
 
                      <div className="mt-14 md:mt-16 grid grid-cols-2 gap-3 md:gap-8">
@@ -69,9 +69,9 @@ const Context = () => {
                               <li>• Impulsive Choices</li>
                            </ul>
                         </div>
-                        <div className="border-r-2 border-red-200 pr-4 md:pr-6 text-right">
-                           <h4 className="text-red-500 font-serif italic text-base md:text-xl mb-2">Ends Here</h4>
-                           <ul className="text-red-400 text-xs md:text-sm space-y-1.5 md:space-y-2 font-medium">
+                        <div className="border-r-2 border-rose-200 pr-4 md:pr-6 text-right">
+                           <h4 className="text-rose-500 font-serif italic text-base md:text-xl mb-2">Ends Here</h4>
+                           <ul className="text-rose-400 text-xs md:text-sm space-y-1.5 md:space-y-2 font-medium">
                               <li>High-Risk Peers •</li>
                               <li>Disengagement •</li>
                               <li>Exploitation •</li>

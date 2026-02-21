@@ -4,7 +4,7 @@ import { Building2, ArrowRight } from 'lucide-react';
 
 const Advisory = () => {
    return (
-      <section id="advisory" className="py-24 bg-blue-50 relative overflow-hidden border-t border-neutral-200">
+      <section id="advisory" className="py-24 bg-neutral-50 relative overflow-hidden border-t border-neutral-200">
          <div className="max-w-[1200px] mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
             <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none"></div>
