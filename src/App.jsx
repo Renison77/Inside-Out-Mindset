@@ -15,7 +15,8 @@ const App = () => {
     <SmoothScroll>
       <Loader />
 
-      <div className="font-sans antialiased text-primary-900 selection:bg-secondary-200 selection:text-primary-900 bg-white">
+      <div className="font-sans antialiased text-primary-900 selection:bg-secondary-200 selection:text-primary-900 bg-white relative">
+        <div className="bg-noise fixed inset-0 z-[100] mix-blend-overlay pointer-events-none opacity-[0.03]"></div>
         <Navbar />
         <Hero />
         <Talks />

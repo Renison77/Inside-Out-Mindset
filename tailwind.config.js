@@ -13,23 +13,23 @@ export default {
       },
       colors: {
         primary: {
-          950: '#0F172A', // Slate 900 - Keep distinct from black for premium look
-          900: '#1E3A8A', // Deep Royal - Richer blue
-          800: '#1E40AF', // Bright Royal
-          700: '#3B82F6', // Blue 500 equivalent - Hopeful blue
-        },
-        neutral: {
-          50: '#F9FAFB', // Ultra light grey
-          100: '#F0F2F4', // Crisp institutional grey
-          200: '#E2E8F0', // Border grey
-          300: '#CBD5E1', // Muted text
-          400: '#94A3B8', // Placeholder text
-          500: '#64748B', // Body text
+          950: '#09090b', // True onyx
+          900: '#18181b', // Deep charcoal
+          800: '#27272a',
+          700: '#3f3f46',
         },
         secondary: {
-          400: '#FBBF24', // Sunny Gold
-          500: '#F59E0B', // Vibrant Amber
-          600: '#D97706', // Deep Gold - Contrast
+          400: '#34d399', // Electric Sage/Mint
+          500: '#10b981', // Pattern-interrupt Green
+          600: '#059669',
+        },
+        neutral: {
+          50: '#fafafa', // Pure white
+          100: '#f4f4f5', // Cool grey
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#a1a1aa',
+          500: '#71717a',
         },
         sage: {
           500: '#7B9C96', // Muted Teal/Sage
