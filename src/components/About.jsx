@@ -7,13 +7,26 @@ const About = () => {
       <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
          <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
-            <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center relative">
+            {/* Mobile / Tablet Heading (Visible only on lg and down) */}
+            <div className="lg:hidden mb-12 relative z-20">
+               <Reveal delay={0.2}>
+                  <div className="inline-block px-4 py-1.5 bg-neutral-100 text-neutral-500 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] mb-6 border border-neutral-200">
+                     Behind the Message
+                  </div>
+                  <h2 className="text-5xl md:text-6xl font-sans font-medium text-primary-900 leading-[0.9] tracking-tighter">
+                     I Lived the <br />
+                     <span className="font-serif italic text-secondary-600 font-light">Consequences.</span>
+                  </h2>
+               </Reveal>
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center relative">
 
                {/* Decorative Background Element */}
                <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-50/50 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
                {/* Image Side */}
-               <div className="lg:col-span-5 relative order-2 lg:order-1 pt-10 lg:pt-0">
+               <div className="lg:col-span-5 relative order-1 lg:order-1 pt-0 lg:pt-0">
                   <Reveal>
                      <div className="relative">
                         {/* Offset Frame / Accent Block */}
@@ -38,15 +51,18 @@ const About = () => {
                </div>
 
                {/* Text Side */}
-               <div className="lg:col-span-7 order-1 lg:order-2 pl-0 md:pl-8">
+               <div className="lg:col-span-7 order-2 lg:order-2 pl-0 md:pl-8">
                   <Reveal delay={0.2}>
-                     <div className="inline-block px-4 py-1.5 bg-neutral-100 text-neutral-500 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-neutral-200">
-                        Behind the Message
+                     {/* Desktop Heading (Hidden on mobile) */}
+                     <div className="hidden lg:block">
+                        <div className="inline-block px-4 py-1.5 bg-neutral-100 text-neutral-500 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] mb-8 border border-neutral-200">
+                           Behind the Message
+                        </div>
+                        <h2 className="text-5xl md:text-6xl lg:text-[72px] font-sans font-medium text-primary-900 mb-10 leading-[0.9] tracking-tighter">
+                           I Lived the <br />
+                           <span className="font-serif italic text-secondary-600 font-light">Consequences.</span>
+                        </h2>
                      </div>
-                     <h2 className="text-5xl md:text-6xl lg:text-[72px] font-sans font-medium text-primary-900 mb-10 leading-[0.9] tracking-tighter">
-                        I Lived the <br />
-                        <span className="font-serif italic text-secondary-600 font-light">Consequences.</span>
-                     </h2>
 
                      <div className="space-y-6 text-neutral-500 text-lg leading-relaxed font-light relative">
                         {/* Drop Cap for first paragraph */}
