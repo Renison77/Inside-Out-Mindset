@@ -12,65 +12,67 @@ const EditorialCard = ({ item, index }) => {
          whileInView={{ opacity: 1, y: 0 }}
          viewport={{ once: true, margin: "-100px" }}
          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-         className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-0 lg:gap-16 items-center group`}
+         className="flex flex-col gap-0 lg:gap-8 group bg-white border border-neutral-100 p-6 lg:p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300 h-full justify-between"
       >
-         {/* Image Section */}
-         <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] overflow-hidden rounded-sm bg-primary-950">
-            {/* Subtle overlay gradient */}
-            <div className={`absolute inset-0 z-10 bg-gradient-to-t ${isEven ? 'from-primary-950/80' : 'from-primary-950/60'} via-primary-900/20 to-transparent mix-blend-multiply`}></div>
-            <img
-               src={item.image}
-               alt={item.title}
-               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out"
-            />
-            {/* Floating Glassmorphism Badge */}
-            <div className={`absolute bottom-8 ${isEven ? 'left-8' : 'right-8'} z-20 backdrop-blur-md bg-white/10 border border-white/20 p-6 rounded-sm max-w-[80%] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700`}>
-               <p className="text-white font-serif italic text-lg leading-snug">"{item.outcomeLine}"</p>
-            </div>
-         </div>
-
          {/* Content Section */}
-         <div className="w-full lg:w-1/2 pt-10 lg:pt-0 pb-16 lg:pb-0 px-4 lg:px-0 flex flex-col justify-center">
-            <div className="flex items-center gap-4 mb-6">
-               <div className="w-12 h-12 bg-neutral-50 border border-neutral-100 rounded-full flex items-center justify-center text-secondary-500 shadow-sm">
-                  {item.icon}
+         <div className="w-full flex flex-col justify-center">
+            <div className="flex items-center justify-between mb-8">
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-neutral-50 border border-neutral-100 rounded-full flex items-center justify-center text-secondary-500 shadow-sm">
+                     {item.icon}
+                  </div>
+                  <div>
+                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">{item.cat}</p>
+                     {item.badge && <span className="inline-block mt-1 text-[9px] uppercase tracking-widest text-secondary-600 font-bold">{item.badge}</span>}
+                  </div>
                </div>
-               <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">{item.cat}</p>
-                  {item.badge && <span className="inline-block mt-1 text-[9px] uppercase tracking-widest text-secondary-600 font-bold">{item.badge}</span>}
+               {/* Outcome line moved to header as a badge style element */}
+               <div className="hidden lg:block bg-secondary-50/50 border border-secondary-100 px-4 py-2 rounded-sm">
+                  <p className="text-secondary-700 font-serif italic text-sm">"{item.outcomeLine}"</p>
                </div>
             </div>
 
-            <h3 className="text-3xl lg:text-5xl font-sans font-medium text-primary-900 leading-[1.1] tracking-tight mb-6">
+            <h3 className="text-3xl lg:text-4xl font-sans font-medium text-primary-900 leading-[1.1] tracking-tight mb-6">
                {item.title.split(': ')[0]}: <br />
-               <span className="font-serif italic font-light text-secondary-600">{item.title.split(': ')[1]}</span>
+               <span className="font-serif italic font-light text-secondary-600 block mt-2">{item.title.split(': ')[1]}</span>
             </h3>
 
-            <p className="text-lg text-neutral-500 leading-relaxed mb-8 font-light">
+            <p className="text-lg text-neutral-500 leading-relaxed mb-8 font-light max-w-3xl">
                {item.oneLiner}
             </p>
 
-            <div className="space-y-8 relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[1px] before:bg-gradient-to-b before:from-secondary-500 before:to-transparent pl-6">
-               <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-4 flex items-center gap-2">
-                     <span className="w-1.5 h-1.5 bg-secondary-500 rounded-full"></span> Core Focus
+            <div className="flex flex-col gap-8">
+               <div className="relative pl-4">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-6 flex items-center gap-3">
+                     <span className="w-6 h-px bg-secondary-500 block"></span> Core Focus
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                      {item.previewBullets.map((bullet, i) => (
-                        <li key={i} className="text-neutral-500 text-sm">{bullet}</li>
+                        <li key={i} className="text-neutral-500 text-sm flex items-start gap-3">
+                           <Check size={16} className="mt-0.5 text-secondary-400 shrink-0" />
+                           <span className="leading-relaxed">{bullet}</span>
+                        </li>
                      ))}
                   </ul>
                </div>
-               <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-4 flex items-center gap-2">
-                     <span className="w-1.5 h-1.5 bg-primary-900 rounded-full"></span> Deep Dive
+               <div className="relative pl-4 border-t border-neutral-100 pt-8">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-6 flex items-center gap-3">
+                     <span className="w-6 h-px bg-primary-900 block"></span> Deep Dive
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-4">
                      {item.expandedBullets.map((bullet, i) => (
-                        <li key={i} className="text-neutral-400 text-sm font-serif italic">{bullet}</li>
+                        <li key={i} className="text-neutral-500 text-sm flex items-start gap-3">
+                           <ArrowRight size={16} className="mt-0.5 text-primary-400 shrink-0" />
+                           <span className="leading-relaxed font-serif italic">{bullet}</span>
+                        </li>
                      ))}
                   </ul>
                </div>
+            </div>
+
+            {/* Outcome line for mobile */}
+            <div className="lg:hidden mt-8 pt-6 border-t border-neutral-100">
+               <p className="text-secondary-700 font-serif italic text-sm text-center">"{item.outcomeLine}"</p>
             </div>
          </div>
       </motion.div>
@@ -141,7 +143,7 @@ const Talks = () => {
                </Reveal>
             </div>
 
-            <div className="flex flex-col gap-24 lg:gap-40">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                {talks.map((talk, i) => (
                   <EditorialCard key={i} item={talk} index={i} />
                ))}

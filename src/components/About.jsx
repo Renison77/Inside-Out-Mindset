@@ -38,12 +38,12 @@ const About = () => {
                            <img
                               src={mindyImage}
                               alt="Mindy Bhandher"
-                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out scale-105 group-hover:scale-100"
+                              className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out scale-105 group-hover:scale-100"
                            />
 
                            {/* Overlay Quote */}
-                           <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent z-20">
-                              <p className="text-white font-playfair italic font-bold tracking-wide text-2xl md:text-3xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">"You Don't Get to Rewind Life"</p>
+                           <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent z-20 text-center">
+                              <p className="inline-block text-white font-playfair italic font-bold tracking-wide text-2xl md:text-3xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">You Don't Get to Rewind Life</p>
                            </div>
                         </div>
                      </div>
