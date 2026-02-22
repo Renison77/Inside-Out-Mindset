@@ -1,5 +1,6 @@
 import React from 'react';
 import { Reveal } from './Reveal';
+import mindyImage from '../assets/5E26CDBF-FFFE-4C59-89EF-687DE6CFEF39.jpg';
 
 const About = () => {
    return (
@@ -22,14 +23,14 @@ const About = () => {
                         <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl z-10 group bg-neutral-100">
                            <div className="absolute inset-0 bg-primary-900/20 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-0"></div>
                            <img
-                              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" // Placeholder Headshot
+                              src={mindyImage}
                               alt="Mindy Bhandher"
                               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out scale-105 group-hover:scale-100"
                            />
 
                            {/* Overlay Quote */}
-                           <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary-950/90 via-primary-950/40 to-transparent z-20">
-                              <p className="text-white font-serif italic text-xl md:text-2xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">"Prevention isn't soft. It's protection."</p>
+                           <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent z-20">
+                              <p className="text-white font-playfair italic font-bold tracking-wide text-2xl md:text-3xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">"You Don't Get to Rewind Life"</p>
                            </div>
                         </div>
                      </div>
