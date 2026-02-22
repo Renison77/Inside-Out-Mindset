@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Reveal } from './Reveal';
-import heroVideo from '../assets/5234909-hd_1920_1080_25fps.mp4';
 
 const Hero = () => {
    const { scrollY } = useScroll();
@@ -12,25 +11,11 @@ const Hero = () => {
    return (
       <section id="hero" className="relative h-screen flex flex-col items-center justify-center bg-neutral-50 overflow-hidden">
 
-         {/* Cinematic Background - Enhanced Gradients & Noise */}
+         {/* Clean Minimal Background */}
          <motion.div
             style={{ y }}
-            className="absolute inset-0 z-0 bg-neutral-50"
+            className="absolute inset-0 z-0 bg-white"
          >
-            <video
-               autoPlay
-               loop
-               muted
-               playsInline
-               className="absolute inset-0 w-full h-full object-cover opacity-90 z-0 scale-105"
-            >
-               <source src={heroVideo} type="video/mp4" />
-            </video>
-            {/* Base color overlay */}
-            <div className="absolute inset-0 bg-white/10 z-10"></div>
-
-            {/* Dynamic Radial Gradient for depth */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-neutral-50/40 to-neutral-50/80 z-20"></div>
          </motion.div>
 
          <div className="relative z-30 max-w-[1200px] mx-auto px-4 md:px-6 w-full text-center pt-24 md:pt-32">
@@ -42,12 +27,21 @@ const Hero = () => {
                   className="flex flex-col items-center mb-8"
                >
 
-                  <h1 className="flex flex-col items-center text-center font-sans font-medium text-primary-900 leading-[0.95] tracking-tighter mb-8 drop-shadow-sm antialiased relative">
-                     <span className="text-sm md:text-xl font-bold uppercase tracking-widest text-secondary-600 mb-6 block">Youth Prevention Keynote Speaker</span>
-                     <span className="relative text-5xl md:text-7xl lg:text-[90px] xl:text-[110px] z-10 block bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 bg-clip-text text-transparent pb-4">From Prison to Purpose</span>
-                  </h1>
+                  <div className="flex flex-col items-center text-center mb-8">
+                     <span className="font-montserrat font-medium tracking-[0.05em] sm:tracking-[0.1em] text-[#D97904] text-sm md:text-base mb-6 block uppercase">
+                        Youth Prevention Keynote Speaker
+                     </span>
+                     <h1 className="font-playfair font-black text-[#0F1B2D] leading-[1.1] sm:leading-[1] flex flex-col items-center">
+                        <span className="text-5xl md:text-7xl lg:text-[80px] xl:text-[90px] block">
+                           From Prison
+                        </span>
+                        <span className="text-[55px] md:text-[80px] lg:text-[90px] xl:text-[105px] block mt-1 sm:mt-0">
+                           to <span className="text-[#D97904]">Purpose</span>
+                        </span>
+                     </h1>
+                  </div>
 
-                  <p className="text-lg md:text-2xl text-neutral-600 max-w-3xl font-light leading-relaxed mb-10 font-sans tracking-wide">
+                  <p className="font-inter font-normal text-[#6E7781] text-lg md:text-xl max-w-2xl leading-[1.6] mb-12">
                      I have lived the consequences of many poor decisions and now I share the tools that helped rebuild my life so that others can build something better.
                   </p>
 
