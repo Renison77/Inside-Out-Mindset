@@ -7,12 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Lora"', 'serif'],
-        sans: ['"Outfit"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-        playfair: ['"Playfair Display"', 'serif'],
-        inter: ['"Inter"', 'sans-serif'],
-        montserrat: ['"Montserrat"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
+        sans: ['"Montserrat"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
       },
       colors: {
         primary: {

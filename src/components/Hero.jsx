@@ -30,10 +30,10 @@ const Hero = () => {
                >
 
                   <div className="flex flex-col items-center text-center mb-8">
-                     <span className="font-montserrat font-medium tracking-[0.05em] sm:tracking-[0.1em] text-[#D97904] text-sm md:text-base mb-6 block uppercase">
+                     <span className="font-sans font-medium tracking-[0.05em] sm:tracking-[0.1em] text-[#D97904] text-sm md:text-base mb-6 block uppercase">
                         {t("hero.kicker")}
                      </span>
-                     <h1 className="font-playfair font-black text-[#0F1B2D] leading-[1.1] sm:leading-[1] flex flex-col items-center">
+                     <h1 className="font-serif font-black text-[#0F1B2D] leading-[1.1] sm:leading-[1] flex flex-col items-center">
                         <span className="text-5xl md:text-7xl lg:text-[80px] xl:text-[90px] block">
                            {t("hero.title_part1")}
                         </span>
@@ -43,7 +43,7 @@ const Hero = () => {
                      </h1>
                   </div>
 
-                  <p className="font-inter font-normal text-[#6E7781] text-lg md:text-xl max-w-2xl leading-[1.6] mb-12">
+                  <p className="font-sans font-normal text-[#6E7781] text-lg md:text-xl max-w-2xl leading-[1.6] mb-12">
                      {t("hero.description")}
                   </p>
 

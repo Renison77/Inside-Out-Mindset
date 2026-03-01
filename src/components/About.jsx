@@ -45,7 +45,7 @@ const About = () => {
 
                            {/* Overlay Quote */}
                            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-primary-950/95 via-primary-950/60 to-transparent z-20 text-center">
-                              <p className="inline-block text-white font-playfair italic font-bold tracking-wide text-2xl md:text-3xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">{t("about.image_quote")}</p>
+                              <p className="inline-block text-white font-serif italic font-bold tracking-wide text-2xl md:text-3xl leading-snug group-hover:-translate-y-2 transition-transform duration-700">{t("about.image_quote")}</p>
                            </div>
                         </div>
                      </div>
