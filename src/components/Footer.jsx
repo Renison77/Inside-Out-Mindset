@@ -24,6 +24,7 @@ const Footer = () => {
                         <li><a href="#talks" className="hover:text-secondary-500 transition-colors">{t("footer.nav_speaking")}</a></li>
                         <li><a href="#outcomes" className="hover:text-secondary-500 transition-colors">{t("footer.nav_outcomes")}</a></li>
                         <li><a href="#about" className="hover:text-secondary-500 transition-colors">{t("footer.nav_about")}</a></li>
+                        <li><a href="#media" className="hover:text-secondary-500 transition-colors">{t("footer.nav_media")}</a></li>
                      </ul>
                   </div>
                   <div>

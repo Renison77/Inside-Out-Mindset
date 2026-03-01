@@ -19,6 +19,7 @@ const Navbar = () => {
       { name: t("nav.programs"), href: "#talks" },
       { name: t("nav.impact"), href: "#outcomes" },
       { name: t("nav.about"), href: "#about" },
+      { name: t("nav.media"), href: "#media" },
    ];
 
    const scrollTo = (id) => {

@@ -3,6 +3,7 @@
       "about": "ਬਾਰੇ",
       "programs": "ਪ੍ਰੋਗਰਾਮ",
       "impact": "ਪ੍ਰਭਾਵ",
+      "media": "ਮੀਡੀਆ",
       "book_mindy": "ਹੁਣੇ ਬੁੱਕ ਕਰੋ"
    },
    "about": {
@@ -85,6 +86,7 @@
       "nav_speaking": "ਬੋਲਣਾ",
       "nav_outcomes": "ਨਤੀਜੇ",
       "nav_about": "ਬਾਰੇ",
+      "nav_media": "ਮੀਡੀਆ",
       "connect_title": "ਕਨੈਕਟ ਕਰੋ",
       "connect_contact": "ਸੰਪਰਕ",
       "connect_email": "ਸਾਨੂੰ ਈਮੇਲ ਕਰੋ",

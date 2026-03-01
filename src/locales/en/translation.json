@@ -3,6 +3,7 @@
       "about": "About",
       "programs": "Programs",
       "impact": "Impact",
+      "media": "Media",
       "book_mindy": "Book Now"
    },
    "about": {
@@ -85,6 +86,7 @@
       "nav_speaking": "Speaking",
       "nav_outcomes": "Outcomes",
       "nav_about": "About",
+      "nav_media": "Media",
       "connect_title": "Connect",
       "connect_contact": "Contact",
       "connect_email": "Email Us",
