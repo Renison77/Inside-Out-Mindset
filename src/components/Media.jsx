@@ -10,6 +10,13 @@ const Media = () => {
 
    const mediaItems = [
       {
+         id: 3,
+         type: 'image',
+         url: '/assets/images/kids_play_talk.jpg',
+         captionKey: 'item3_caption',
+         objectPosition: 'object-[center_35%]'
+      },
+      {
          id: 1,
          type: 'video',
          url: 'https://www.youtube.com/embed/KMoxDbVDGDs',
@@ -72,7 +79,7 @@ const Media = () => {
                            </div>
                         ) : (
                            <div className="relative aspect-video overflow-hidden bg-neutral-200">
-                              <img src={item.url} alt={t(`media.${item.captionKey}`)} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                              <img src={item.url} alt={t(`media.${item.captionKey}`)} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${item.objectPosition || 'object-center'}`} />
                            </div>
                         )}
 
