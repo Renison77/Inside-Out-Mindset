@@ -1,38 +1,34 @@
 import React from 'react';
 import { Reveal } from './Reveal';
 import { Trophy, ShieldCheck, Users2, Zap, BrainCircuit, HeartHandshake, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Outcomes = () => {
+   const { t } = useTranslation();
    const benefits = [
       {
          icon: <Zap size={24} />,
-         title: "Engagement Without Glorification",
-         text: "Students stay engaged without crime being romanticized. The message is honest, accountable, and grounded."
+         key: "benefit1"
       },
       {
          icon: <ShieldCheck size={24} />,
-         title: "Clear Decision-Making Language",
-         text: "Students leave with practical language around pressure, ego, belonging, and consequences they can use immediately."
+         key: "benefit2"
       },
       {
          icon: <BrainCircuit size={24} />,
-         title: "Recognizing the Signs",
-         text: "Students and parents learn how small patterns escalate over time — and how to interrupt them early."
+         key: "benefit3"
       },
       {
          icon: <Trophy size={24} />,
-         title: "Accountability, Not Shame",
-         text: "Real behavioral change begins when we replace fear and shame with genuine responsibility."
+         key: "benefit4"
       },
       {
          icon: <HeartHandshake size={24} />,
-         title: "Bridging the Gap",
-         text: "Creates a stronger, more authentic connection between students, parents, and educators in schools."
+         key: "benefit5"
       },
       {
          icon: <Users2 size={24} />,
-         title: "Actionable Frameworks",
-         text: "Provides a clear early-intervention path to address and redirect troubling behavior before issues escalate."
+         key: "benefit6"
       }
    ];
 
@@ -46,13 +42,13 @@ const Outcomes = () => {
             {/* Header Section */}
             <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto">
                <Reveal>
-                  <h2 className="text-xs font-bold text-secondary-600 uppercase tracking-[0.3em] mb-4">The Impact</h2>
+                  <h2 className="text-xs font-bold text-secondary-600 uppercase tracking-[0.3em] mb-4">{t("outcomes.kicker")}</h2>
                   <h3 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-primary-900 leading-[1.1] tracking-tight mb-6">
-                     Outcomes Schools <span className="font-serif italic text-secondary-600 font-light">Care About</span>
+                     {t("outcomes.title_part1")} <span className="font-serif italic text-secondary-600 font-light">{t("outcomes.title_part2")}</span>
                   </h3>
                   <div className="w-16 h-px bg-secondary-500 mx-auto mb-6"></div>
                   <p className="text-neutral-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                     Measurable shifts in school culture. Accountability without shame, and students equipped to handle real-world pressure.
+                     {t("outcomes.description")}
                   </p>
                </Reveal>
             </div>
@@ -73,9 +69,9 @@ const Outcomes = () => {
                            <div className="w-14 h-14 bg-neutral-50 border border-neutral-100 rounded-full flex items-center justify-center text-secondary-500 mb-8 group-hover:bg-secondary-500 group-hover:text-white group-hover:border-secondary-500 transition-all duration-300 relative shadow-sm">
                               {item.icon}
                            </div>
-                           <h4 className="text-2xl font-sans font-medium text-primary-900 mb-4 leading-tight">{item.title}</h4>
+                           <h4 className="text-2xl font-sans font-medium text-primary-900 mb-4 leading-tight">{t(`outcomes.${item.key}_title`)}</h4>
                            <p className="text-base font-light text-neutral-500 leading-relaxed">
-                              {item.text}
+                              {t(`outcomes.${item.key}_text`)}
                            </p>
                         </div>
                      </div>

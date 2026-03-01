@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Loader = () => {
+   const { t } = useTranslation();
    const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
@@ -58,8 +60,8 @@ const Loader = () => {
                   transition={{ delay: 0.5 }}
                   className="text-center"
                >
-                  <h3 className="font-serif text-2xl italic mb-2 tracking-wide text-secondary-500">Unravelling the complex.</h3>
-                  <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Inside Out Mindset</p>
+                  <h3 className="font-serif text-2xl italic mb-2 tracking-wide text-secondary-500">{t("loader.text1")}</h3>
+                  <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">{t("loader.text2")}</p>
                </motion.div>
             </motion.div>
          )}

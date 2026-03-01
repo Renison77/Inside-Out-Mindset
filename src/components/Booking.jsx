@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Reveal } from './Reveal';
+import { useTranslation } from 'react-i18next';
 
 const Booking = () => {
+   const { t } = useTranslation();
    const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
 
    const handleSubmit = async (e) => {
@@ -44,10 +46,10 @@ const Booking = () => {
 
             <Reveal>
                <div className="text-center mb-16">
-                  <h2 className="text-xs font-bold text-secondary-600 uppercase tracking-[0.3em] mb-6">Contact</h2>
-                  <h3 className="text-4xl md:text-6xl font-sans font-medium text-primary-900 mb-6">Request a Booking</h3>
+                  <h2 className="text-xs font-bold text-secondary-600 uppercase tracking-[0.3em] mb-6">{t("booking.kicker")}</h2>
+                  <h3 className="text-4xl md:text-6xl font-sans font-medium text-primary-900 mb-6">{t("booking.title")}</h3>
                   <p className="text-neutral-500 font-light text-lg max-w-2xl mx-auto">
-                     Tell us about your audience and goals. We’ll respond with availability and recommended format within 48 hours.
+                     {t("booking.description")}
                   </p>
                </div>
             </Reveal>
@@ -57,13 +59,13 @@ const Booking = () => {
 
                   {status === 'success' ? (
                      <div className="text-center py-12">
-                        <h4 className="text-2xl font-bold text-primary-900 mb-4">Request Sent Successfully!</h4>
-                        <p className="text-neutral-600">Thank you for reaching out. We will get back to you within 48 hours.</p>
+                        <h4 className="text-2xl font-bold text-primary-900 mb-4">{t("booking.success_title")}</h4>
+                        <p className="text-neutral-600">{t("booking.success_message")}</p>
                         <button
                            onClick={() => setStatus('idle')}
                            className="mt-8 px-8 py-3 bg-neutral-100 hover:bg-neutral-200 text-primary-900 text-sm font-bold uppercase tracking-widest transition-colors rounded-sm"
                         >
-                           Send Another Request
+                           {t("booking.send_another")}
                         </button>
                      </div>
                   ) : (
@@ -71,52 +73,52 @@ const Booking = () => {
 
                         {status === 'error' && (
                            <div className="p-4 bg-red-50 border border-red-200 text-red-600 text-sm rounded-sm">
-                              There was an error sending your request. Please try again or ensure the Google Web App URL is correctly configured.
+                              {t("booking.error_message")}
                            </div>
                         )}
 
                         <div className="grid md:grid-cols-2 gap-8">
                            <div className="space-y-2 group">
-                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Name *</label>
-                              <input required name="Name" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="Full Name" />
+                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_name")}</label>
+                              <input required name="Name" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_name")} />
                            </div>
                            <div className="space-y-2 group">
-                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Role / Organization *</label>
-                              <input required name="Role" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="Principal, Teacher, etc." />
-                           </div>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                           <div className="space-y-2 group">
-                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Email *</label>
-                              <input required name="Email" type="email" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="email@school.com" />
-                           </div>
-                           <div className="space-y-2 group">
-                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Phone</label>
-                              <input name="Phone" type="tel" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="(555) 555-5555" />
+                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_role")}</label>
+                              <input required name="Role" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_role")} />
                            </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
                            <div className="space-y-2 group">
-                              <label htmlFor="audience-select" className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Audience</label>
+                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_email")}</label>
+                              <input required name="Email" type="email" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_email")} />
+                           </div>
+                           <div className="space-y-2 group">
+                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_phone")}</label>
+                              <input name="Phone" type="tel" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_phone")} />
+                           </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                           <div className="space-y-2 group">
+                              <label htmlFor="audience-select" className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_audience")}</label>
                               <select name="Audience" id="audience-select" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all rounded-sm appearance-none">
-                                 <option value="High School Students">High School Students</option>
-                                 <option value="Parents">Parents</option>
-                                 <option value="Staff / Leadership">Staff / Leadership</option>
-                                 <option value="Organization / Government">Organization / Government</option>
-                                 <option value="Other">Other</option>
+                                 <option value="High School Students">{t("booking.audience_hs")}</option>
+                                 <option value="Parents">{t("booking.audience_parents")}</option>
+                                 <option value="Staff / Leadership">{t("booking.audience_staff")}</option>
+                                 <option value="Organization / Government">{t("booking.audience_org")}</option>
+                                 <option value="Other">{t("booking.audience_other")}</option>
                               </select>
                            </div>
                            <div className="space-y-2 group">
-                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Location</label>
-                              <input name="Location" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="City, BC" />
+                              <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_location")}</label>
+                              <input name="Location" type="text" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_location")} />
                            </div>
                         </div>
 
                         <div className="space-y-2 group">
-                           <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">Notes / Goals / Preferred Dates *</label>
-                           <textarea required name="Notes" rows="4" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder="Tell us about your needs..."></textarea>
+                           <label className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest group-focus-within:text-secondary-600 transition-colors">{t("booking.label_notes")}</label>
+                           <textarea required name="Notes" rows="4" className="w-full p-4 bg-neutral-50 border border-neutral-200 text-primary-900 focus:outline-none focus:border-secondary-500 transition-all placeholder:text-neutral-400 rounded-sm" placeholder={t("booking.placeholder_notes")}></textarea>
                         </div>
 
                         <button
@@ -124,7 +126,7 @@ const Booking = () => {
                            disabled={status === 'submitting'}
                            className="w-full py-5 bg-primary-900 hover:bg-secondary-600 disabled:bg-neutral-400 disabled:cursor-not-allowed text-white font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-xl hover:shadow-secondary-500/20 text-xs md:text-sm rounded-sm"
                         >
-                           {status === 'submitting' ? 'Sending...' : 'Send Request'}
+                           {status === 'submitting' ? t("booking.btn_sending") : t("booking.btn_send")}
                         </button>
 
                      </form>

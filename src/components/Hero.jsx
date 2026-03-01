@@ -2,8 +2,10 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+   const { t } = useTranslation();
    const { scrollY } = useScroll();
    const y = useTransform(scrollY, [0, 500], [0, 200]);
    const opacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -29,20 +31,20 @@ const Hero = () => {
 
                   <div className="flex flex-col items-center text-center mb-8">
                      <span className="font-montserrat font-medium tracking-[0.05em] sm:tracking-[0.1em] text-[#D97904] text-sm md:text-base mb-6 block uppercase">
-                        Youth Prevention Keynote Speaker
+                        {t("hero.kicker")}
                      </span>
                      <h1 className="font-playfair font-black text-[#0F1B2D] leading-[1.1] sm:leading-[1] flex flex-col items-center">
                         <span className="text-5xl md:text-7xl lg:text-[80px] xl:text-[90px] block">
-                           From Prison
+                           {t("hero.title_part1")}
                         </span>
                         <span className="text-[55px] md:text-[80px] lg:text-[90px] xl:text-[105px] block mt-1 sm:mt-0">
-                           to <span className="text-[#D97904]">Purpose</span>
+                           {t("hero.title_part2_to")} <span className="text-[#D97904]">{t("hero.title_part2_purpose")}</span>
                         </span>
                      </h1>
                   </div>
 
                   <p className="font-inter font-normal text-[#6E7781] text-lg md:text-xl max-w-2xl leading-[1.6] mb-12">
-                     I have lived the consequences of many poor decisions and now I share the tools that helped rebuild my life so that others can build something better.
+                     {t("hero.description")}
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full relative z-20">
@@ -52,7 +54,7 @@ const Hero = () => {
                            onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })}
                            className="relative w-full sm:w-auto px-10 py-4 bg-primary-900 text-white text-sm font-bold uppercase tracking-[0.2em] hover:bg-secondary-500 hover:text-white transition-all duration-300 rounded-sm border border-transparent flex items-center justify-center gap-3"
                         >
-                           Bring this to your organization
+                           {t("hero.cta")}
                            <ArrowRight size={16} className="text-secondary-400 group-hover:text-white transition-colors" />
                         </button>
                      </div>

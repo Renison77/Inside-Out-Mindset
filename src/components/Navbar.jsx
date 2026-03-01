@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+   const { t } = useTranslation();
    const [isOpen, setIsOpen] = useState(false);
    const [scrolled, setScrolled] = useState(false);
 
@@ -13,9 +16,9 @@ const Navbar = () => {
    }, []);
 
    const navLinks = [
-      { name: "Speaking", href: "#talks" },
-      { name: "Outcomes", href: "#outcomes" },
-      { name: "About", href: "#about" },
+      { name: t("nav.programs"), href: "#talks" },
+      { name: t("nav.impact"), href: "#outcomes" },
+      { name: t("nav.about"), href: "#about" },
    ];
 
    const scrollTo = (id) => {
@@ -54,11 +57,12 @@ const Navbar = () => {
                         <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary-500 group-hover:w-full transition-all duration-300"></span>
                      </button>
                   ))}
+                  <LanguageSwitcher />
                   <button
                      onClick={() => scrollTo('#booking')}
                      className="ml-4 px-6 py-3 text-[13px] font-bold uppercase tracking-widest bg-primary-900 text-white border border-primary-900 hover:bg-secondary-500 hover:border-secondary-500 transition-all duration-300 rounded-sm"
                   >
-                     Book Now
+                     {t("nav.book_mindy")}
                   </button>
                </div>
 
@@ -96,11 +100,12 @@ const Navbar = () => {
                            {link.name}
                         </button>
                      ))}
+                     <LanguageSwitcher />
                      <button
                         onClick={() => scrollTo('#booking')}
                         className="mt-6 px-10 py-4 bg-secondary-500 text-white font-bold uppercase tracking-widest hover:bg-white hover:text-primary-900 transition-colors rounded-sm"
                      >
-                        Book Now
+                        {t("nav.book_mindy")}
                      </button>
                   </div>
                </motion.div>

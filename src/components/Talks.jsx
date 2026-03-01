@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from './Reveal';
 import { Users, Shield, ArrowRight, X, Check, Star } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
-const EditorialCard = ({ item, index }) => {
+const EditorialCard = ({ item, index, t }) => {
    const isEven = index % 2 === 0;
 
    return (
@@ -22,48 +23,48 @@ const EditorialCard = ({ item, index }) => {
                      {item.icon}
                   </div>
                   <div>
-                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">{item.cat}</p>
-                     {item.badge && <span className="inline-block mt-1 text-[9px] uppercase tracking-widest text-secondary-600 font-bold">{item.badge}</span>}
+                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">{t(`talks.${item.id}_cat`)}</p>
+                     {item.badge && <span className="inline-block mt-1 text-[9px] uppercase tracking-widest text-secondary-600 font-bold">{t(`talks.${item.id}_badge`)}</span>}
                   </div>
                </div>
                {/* Outcome line moved to header as a badge style element */}
                <div className="hidden lg:block bg-secondary-50/50 border border-secondary-100 px-4 py-2 rounded-sm">
-                  <p className="text-secondary-700 font-serif italic text-sm">"{item.outcomeLine}"</p>
+                  <p className="text-secondary-700 font-serif italic text-sm">"{t(`talks.${item.id}_outcome`)}"</p>
                </div>
             </div>
 
             <h3 className="text-3xl lg:text-4xl font-sans font-medium text-primary-900 leading-[1.1] tracking-tight mb-6">
-               {item.title.split(': ')[0]}: <br />
-               <span className="font-serif italic font-light text-secondary-600 block mt-2">{item.title.split(': ')[1]}</span>
+               {t(`talks.${item.id}_title`).split(': ')[0]}: <br />
+               <span className="font-serif italic font-light text-secondary-600 block mt-2">{t(`talks.${item.id}_title`).split(': ')[1]}</span>
             </h3>
 
             <p className="text-lg text-neutral-500 leading-relaxed mb-8 font-light max-w-3xl">
-               {item.oneLiner}
+               {t(`talks.${item.id}_oneLiner`)}
             </p>
 
             <div className="flex flex-col gap-8">
                <div className="relative pl-4">
                   <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-6 flex items-center gap-3">
-                     <span className="w-6 h-px bg-secondary-500 block"></span> Core Focus
+                     <span className="w-6 h-px bg-secondary-500 block"></span> {t("talks.core_focus")}
                   </h4>
                   <ul className="space-y-4">
-                     {item.previewBullets.map((bullet, i) => (
+                     {item.previewBullets.map((_, i) => (
                         <li key={i} className="text-neutral-500 text-sm flex items-start gap-3">
                            <Check size={16} className="mt-0.5 text-secondary-400 shrink-0" />
-                           <span className="leading-relaxed">{bullet}</span>
+                           <span className="leading-relaxed">{t(`talks.${item.id}_preview_bullets.${i}`, { returnObjects: true })}</span>
                         </li>
                      ))}
                   </ul>
                </div>
                <div className="relative pl-4 border-t border-neutral-100 pt-8">
                   <h4 className="text-xs font-bold uppercase tracking-widest text-primary-900 mb-6 flex items-center gap-3">
-                     <span className="w-6 h-px bg-primary-900 block"></span> Deep Dive
+                     <span className="w-6 h-px bg-primary-900 block"></span> {t("talks.deep_dive")}
                   </h4>
                   <ul className="space-y-4">
-                     {item.expandedBullets.map((bullet, i) => (
+                     {item.expandedBullets.map((_, i) => (
                         <li key={i} className="text-neutral-500 text-sm flex items-start gap-3">
                            <ArrowRight size={16} className="mt-0.5 text-primary-400 shrink-0" />
-                           <span className="leading-relaxed font-serif italic">{bullet}</span>
+                           <span className="leading-relaxed font-serif italic">{t(`talks.${item.id}_expanded_bullets.${i}`, { returnObjects: true })}</span>
                         </li>
                      ))}
                   </ul>
@@ -72,7 +73,7 @@ const EditorialCard = ({ item, index }) => {
 
             {/* Outcome line for mobile */}
             <div className="lg:hidden mt-8 pt-6 border-t border-neutral-100">
-               <p className="text-secondary-700 font-serif italic text-sm text-center">"{item.outcomeLine}"</p>
+               <p className="text-secondary-700 font-serif italic text-sm text-center">"{t(`talks.${item.id}_outcome`)}"</p>
             </div>
          </div>
       </motion.div>
@@ -80,41 +81,30 @@ const EditorialCard = ({ item, index }) => {
 };
 
 const Talks = () => {
+   const { t } = useTranslation();
    const talks = [
       {
-         cat: "High School",
-         title: "High School Keynote: Identity Under Pressure",
-         oneLiner: "Peer pressure, status, and decision-making tools for real-life moments.",
-         previewBullets: [
-            "Emotional regulation tools for real-life pressure",
-            "How small decisions become major consequences",
-            "Accountability without shame",
-            "Recognizing early warning signs"
-         ],
-         expandedTitle: "Real-World Tools",
-         expandedBullets: ["Pressure, image, and status dynamics", "Decision-making under stress", "The real cost of one bad choice"],
-         outcomeLine: "Students leave with language to pause, think, and choose better.",
+         id: "talk1",
+         previewBullets: [1, 2, 3, 4],
+         expandedBullets: [1, 2, 3],
          icon: <Users size={24} />,
          image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200" // Premium class/audience placeholder
       },
       {
-         cat: "Parents",
-         title: "Parent Session: Connection as Protection",
-         oneLiner: "Connection, boundaries, and communication that protects kids as pressure increases.",
-         previewBullets: [
-            "Building connection before crisis",
-            "Recognizing early warning signs",
-            "Moving from fear to productive conversation",
-            "Boundaries that protect without pushing away"
-         ],
-         expandedTitle: "Prevention Strategy",
-         expandedBullets: ["How to build trust so kids tell the truth", "Early intervention before problems escalate", "Boundaries with warmth and consistency"],
-         outcomeLine: "Parents leave with practical tools they can use immediately at home.",
-         badge: "Punjabi Sessions Available",
+         id: "talk2",
+         previewBullets: [1, 2, 3, 4],
+         expandedBullets: [1, 2, 3],
+         badge: true,
          icon: <Shield size={24} />,
          image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200" // Premium connection/parent placeholder
       }
    ];
+
+   const formatOptionsLength = t("talks.format_options", { returnObjects: true }).length;
+   const formatOptionsArray = Array.from({ length: formatOptionsLength });
+
+   const expectationsLength = t("talks.expectations", { returnObjects: true }).length;
+   const expectationsArray = Array.from({ length: expectationsLength });
 
    return (
       <section id="talks" className="py-24 md:py-32 bg-neutral-50 relative scroll-mt-20">
@@ -128,24 +118,24 @@ const Talks = () => {
                   <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
                      <div className="px-4 py-1.5 bg-secondary-500 text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm flex items-center gap-2 shadow-lg shadow-secondary-500/20">
                         <Star size={10} fill="currentColor" />
-                        Not "Scared Straight"
+                        {t("talks.kicker")}
                      </div>
                   </div>
                   <h2 className="text-5xl md:text-7xl lg:text-[80px] font-sans font-medium text-primary-900 tracking-tighter leading-[0.9] mb-8">
-                     Speaking<br />
-                     <span className="font-serif italic text-secondary-600 font-light pr-4">Engagements</span>
+                     {t("talks.title_part1")}<br />
+                     <span className="font-serif italic text-secondary-600 font-light pr-4">{t("talks.title_part2")}</span>
                   </h2>
                </Reveal>
                <Reveal delay={0.2}>
                   <p className="text-neutral-500 text-lg md:text-xl leading-relaxed font-light">
-                     Keynote talks and workshops focused on prevention, emotional regulation, and decision-making under pressure. <span className="font-medium text-primary-900 border-b border-secondary-400">Not a motivational speech.</span> A lived-experience conversation that interrupts patterns early.
+                     {t("talks.description_1")}<span className="font-medium text-primary-900 border-b border-secondary-400">{t("talks.description_highlight")}</span>{t("talks.description_2")}
                   </p>
                </Reveal>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
                {talks.map((talk, i) => (
-                  <EditorialCard key={i} item={talk} index={i} />
+                  <EditorialCard key={i} item={talk} index={i} t={t} />
                ))}
             </div>
 
@@ -156,19 +146,13 @@ const Talks = () => {
                   <div className="bg-neutral-50 p-8 md:p-10 border border-neutral-100 rounded-sm hover:-tranneutral-y-1 transition-transform duration-500 h-full">
                      <h3 className="text-xl md:text-2xl font-sans font-medium text-primary-900 mb-6 flex items-center gap-3">
                         <span className="w-6 h-px bg-secondary-500 block"></span>
-                        Format Options
+                        {t("talks.format_options_title")}
                      </h3>
                      <ul className="space-y-4">
-                        {[
-                           "45–60 minute keynote",
-                           "Half-day workshop",
-                           "Parent evening session",
-                           "Combined student + parent programming",
-                           "Punjabi-language sessions available"
-                        ].map((item, i) => (
+                        {formatOptionsArray.map((_, i) => (
                            <li key={i} className="flex items-start gap-3 text-neutral-600">
                               <Check size={18} className="mt-0.5 text-secondary-500 shrink-0" />
-                              <span className="leading-relaxed">{item}</span>
+                              <span className="leading-relaxed">{t(`talks.format_options.${i}`)}</span>
                            </li>
                         ))}
                      </ul>
@@ -180,19 +164,13 @@ const Talks = () => {
                   <div className="bg-neutral-50 p-8 md:p-10 border border-neutral-100 rounded-sm hover:-tranneutral-y-1 transition-transform duration-500 h-full">
                      <h3 className="text-xl md:text-2xl font-sans font-medium text-primary-900 mb-6 flex items-center gap-3">
                         <span className="w-6 h-px bg-secondary-500 block"></span>
-                        What Schools and Organizations Can Expect
+                        {t("talks.expectations_title")}
                      </h3>
                      <ul className="space-y-4">
-                        {[
-                           "Professional, structured delivery",
-                           "Age-appropriate content",
-                           "No glorification of crime or violence",
-                           "Trauma-informed approach",
-                           "Clear follow-up resources if needed"
-                        ].map((item, i) => (
+                        {expectationsArray.map((_, i) => (
                            <li key={i} className="flex items-start gap-3 text-neutral-600">
                               <Check size={18} className="mt-0.5 text-secondary-500 shrink-0" />
-                              <span className="leading-relaxed">{item}</span>
+                              <span className="leading-relaxed">{t(`talks.expectations.${i}`)}</span>
                            </li>
                         ))}
                      </ul>
@@ -204,14 +182,14 @@ const Talks = () => {
             <Reveal delay={0.2}>
                <div className="mt-20 md:mt-32 text-center border-t border-neutral-200 pt-16 md:pt-24 space-y-6">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-medium text-primary-900">
-                     Bring This to Your <span className="font-serif italic text-secondary-600 font-light">Organization</span>
+                     {t("talks.cta_title_part1")} <span className="font-serif italic text-secondary-600 font-light">{t("talks.cta_title_part2")}</span>
                   </h2>
                   <p className="text-neutral-500 md:text-lg max-w-md mx-auto">
-                     Let’s discuss your audience, goals, and format.
+                     {t("talks.cta_desc")}
                   </p>
                   <div className="pt-6">
                      <button onClick={() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })} className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-primary-900 text-white px-8 lg:px-10 py-4 lg:py-5 text-xs lg:text-sm font-bold uppercase tracking-widest hover:bg-secondary-600 transition-colors duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl shadow-primary-900/10 hover:-tranneutral-y-0.5">
-                        <span className="flex items-center gap-3">Request a Speaking Engagement <ArrowRight size={16} /></span>
+                        <span className="flex items-center gap-3">{t("talks.cta_button")} <ArrowRight size={16} /></span>
                      </button>
                   </div>
                </div>
