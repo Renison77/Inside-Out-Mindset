@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ isMobile }) => {
    const { i18n } = useTranslation();
 
    const handleLanguageChange = (e) => {
@@ -12,11 +12,14 @@ const LanguageSwitcher = () => {
       <select
          onChange={handleLanguageChange}
          value={i18n.resolvedLanguage}
-         className="bg-transparent text-primary-900 border border-primary-900/20 text-sm font-bold uppercase tracking-widest px-2 py-1 rounded-sm focus:outline-none focus:border-primary-900 cursor-pointer transition-colors"
+         className={`bg-transparent text-sm font-bold uppercase tracking-widest px-2 py-1 rounded-sm focus:outline-none cursor-pointer transition-colors ${isMobile
+               ? "text-white border border-white/20 focus:border-white"
+               : "text-primary-900 border border-primary-900/20 focus:border-primary-900"
+            }`}
          aria-label="Select Language"
       >
-         <option value="en">English</option>
-         <option value="pa">ਪੰਜਾਬੀ</option>
+         <option value="en" className={isMobile ? "text-primary-900" : ""}>English</option>
+         <option value="pa" className={isMobile ? "text-primary-900" : ""}>ਪੰਜਾਬੀ</option>
       </select>
    );
 };

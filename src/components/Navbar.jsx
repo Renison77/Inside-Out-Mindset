@@ -100,7 +100,7 @@ const Navbar = () => {
                            {link.name}
                         </button>
                      ))}
-                     <LanguageSwitcher />
+                     <LanguageSwitcher isMobile={true} />
                      <button
                         onClick={() => scrollTo('#booking')}
                         className="mt-6 px-10 py-4 bg-secondary-500 text-white font-bold uppercase tracking-widest hover:bg-white hover:text-primary-900 transition-colors rounded-sm"
