@@ -52,6 +52,14 @@
       "btn_sending": "Sending...",
       "btn_send": "Send Request"
    },
+   "media": {
+      "kicker": "In Action",
+      "title_part1": "Moments from",
+      "title_part2": "Recent Sessions",
+      "description": "A look at the impact and engagement from past talks and workshops.",
+      "item1_caption": "Mindy Bhander's exclusive with OMNI News Punjabi",
+      "item2_caption": "Kids Play Foundation Talk 2026"
+   },
    "context": {
       "kicker": "The Context",
       "title_part1": "The gap between a bad day and a bad life is",

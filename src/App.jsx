@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Talks from './components/Talks';
 import Outcomes from './components/Outcomes';
 import About from './components/About';
+import Media from './components/Media';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
@@ -22,6 +23,7 @@ const App = () => {
         <Talks />
         <Outcomes />
         <About />
+        <Media />
         <Booking />
         <Footer />
       </div>
