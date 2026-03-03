@@ -10,13 +10,6 @@ const Media = () => {
 
    const mediaItems = [
       {
-         id: 3,
-         type: 'image',
-         url: '/assets/images/kids_play_talk.jpg',
-         captionKey: 'item3_caption',
-         objectPosition: 'object-[center_35%]'
-      },
-      {
          id: 1,
          type: 'video',
          url: 'https://www.youtube.com/embed/KMoxDbVDGDs',

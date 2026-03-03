@@ -12,6 +12,27 @@ const Booking = () => {
 
       const form = e.target;
       const formData = new FormData(form);
+
+      // 1. Honeypot check (Tier 1 protection)
+      // If the hidden 'bot_check' field has a value, silently reject or fake success
+      if (formData.get('bot_check')) {
+         console.log("Bot detected (honeypot field filled).");
+         setStatus('success'); // Fake success so the bot doesn't know it failed
+         form.reset();
+         setTimeout(() => setStatus('idle'), 5000);
+         return;
+      }
+
+      // 2. Rudimentary Input Validation (Tier 3 on client side)
+      // Check for links in the Notes field (common bot spam tactic)
+      const notes = formData.get('Notes') || "";
+      const urlPattern = /(https?:\/\/[^\s]+)|(www\.[^\s]+)/gi;
+      if (urlPattern.test(notes)) {
+         console.warn("Spam detected: Links are not allowed in the notes field.");
+         // We can show a regular error or just silently block it too
+         setStatus('error');
+         return;
+      }
       const url = import.meta.env.VITE_GOOGLE_WEB_APP_URL;
 
       if (!url) {
@@ -76,6 +97,12 @@ const Booking = () => {
                               {t("booking.error_message")}
                            </div>
                         )}
+
+                        {/* Honeypot field - Hidden from real users, visible to dumb bots */}
+                        <div style={{ display: 'none' }} aria-hidden="true">
+                           <label htmlFor="bot_check">Leave this field empty</label>
+                           <input type="text" name="bot_check" id="bot_check" tabIndex="-1" autoComplete="off" />
+                        </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
                            <div className="space-y-2 group">
