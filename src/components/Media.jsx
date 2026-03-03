@@ -10,18 +10,18 @@ const Media = () => {
 
    const mediaItems = [
       {
+         id: 3,
+         type: 'image',
+         url: '/assets/images/kids_play_talk.jpg',
+         captionKey: 'item3_caption',
+         objectPosition: 'object-[center_35%]'
+      },
+      {
          id: 1,
          type: 'video',
          url: 'https://www.youtube.com/embed/KMoxDbVDGDs',
          thumbnail: 'https://img.youtube.com/vi/KMoxDbVDGDs/maxresdefault.jpg',
          captionKey: 'item1_caption'
-      },
-      {
-         id: 2,
-         type: 'video',
-         url: 'https://www.youtube.com/embed/Zl3SlSDYLq4',
-         thumbnail: 'https://img.youtube.com/vi/Zl3SlSDYLq4/maxresdefault.jpg',
-         captionKey: 'item2_caption'
       }
    ];
 
