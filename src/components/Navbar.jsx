@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import logo from '../assets/logo.svg';
 
 const Navbar = () => {
    const { t } = useTranslation();
@@ -37,11 +38,11 @@ const Navbar = () => {
             <div className="max-w-[1400px] mx-auto px-4 md:px-6 flex justify-between items-center">
 
                {/* Logo */}
-               <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollTo('#hero')}>
-                  <div className={`flex items-center justify-center font-serif font-bold rounded-sm transition-all duration-300 ${scrolled ? "text-primary-900" : "text-primary-900"}`}>
-                     {/* Logo Placeholder or SVG - Using Text as placeholder for now, ensuring size constraints */}
-                     <span className="text-[20px] md:text-[24px] uppercase tracking-tight leading-none">
-                        INSIDE <span className="text-secondary-600 italic">OUT</span> MINDSET
+               <div className="flex items-center cursor-pointer group" onClick={() => scrollTo('#hero')}>
+                  <div className="flex items-center justify-center transition-all duration-300">
+                     {/* Logo */}
+                     <span className="flex items-center">
+                        <img src={logo} alt="Inside Out Mindset" className="w-[200px] md:w-[280px] h-auto object-contain" />
                      </span>
                   </div>
                </div>
