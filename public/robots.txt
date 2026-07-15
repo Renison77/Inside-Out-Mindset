@@ -1,4 +1,78 @@
+# ==========================================
+# Robots.txt for InsideOutMindset.com
+# Optimized for SEO & GEO (Generative Engine Optimization)
+# ==========================================
+
+# ------------------------------------------
+# General Rules for All Crawlers
+# ------------------------------------------
 User-agent: *
 Allow: /
+# Prevent crawling of duplicate tracking URLs to save crawl budget
+Disallow: /*?*utm_
+Disallow: /*?*gclid=
+Disallow: /*?*fbclid=
+Disallow: /*?*_ga=
 
+# ------------------------------------------
+# Explicit Allow for Search Engines (SEO)
+# ------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ------------------------------------------
+# Explicit Allow for AI/LLM Crawlers (GEO)
+# Ensures LLMs can read and cite the site 
+# ------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Grokbot
+Allow: /
+
+# ------------------------------------------
+# Explicit Allow for Social Scrapers
+# ------------------------------------------
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ------------------------------------------
+# Sitemaps
+# ------------------------------------------
 Sitemap: https://www.insideoutmindset.com/sitemap.xml
